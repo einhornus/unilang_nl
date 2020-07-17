@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f4fe07d-b72d-40d9-a87a-0d894432e3f9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dat.html" beforeDir="false" afterPath="$PROJECT_DIR$/dat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/de.html" beforeDir="false" afterPath="$PROJECT_DIR$/de.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/een.html" beforeDir="false" afterPath="$PROJECT_DIR$/een.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/en.html" beforeDir="false" afterPath="$PROJECT_DIR$/en.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/het.html" beforeDir="false" afterPath="$PROJECT_DIR$/het.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ik.html" beforeDir="false" afterPath="$PROJECT_DIR$/ik.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/is.html" beforeDir="false" afterPath="$PROJECT_DIR$/is.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/je.html" beforeDir="false" afterPath="$PROJECT_DIR$/je.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/niet.html" beforeDir="false" afterPath="$PROJECT_DIR$/niet.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wat.html" beforeDir="false" afterPath="$PROJECT_DIR$/wat.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1enlRfzLxDUJoXSfBsHTImUQKDG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2f4fe07d-b72d-40d9-a87a-0d894432e3f9" name="Default Changelist" comment="" />
+      <created>1594965230801</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594965230801</updated>
+      <workItem from="1594965231946" duration="10286000" />
+      <workItem from="1594996934964" duration="8721000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

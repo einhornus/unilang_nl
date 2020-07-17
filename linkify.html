@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linkify</title>
+</head>
+<body>
+
+
+<textarea type="text" id="text" cols="100" rows="20" value=""></textarea>
+<br>
+<input type="button" onclick="f()" value="Linkify">
+
+<p id ="p"></p>
+
+<script >
+
+  let dict = null
+
+  function readTextFile(file)
+  {
+    dict = {}
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+      if(rawFile.readyState === 4)
+      {
+        if(rawFile.status === 200 || rawFile.status == 0)
+        {
+          var allText = rawFile.responseText;
+
+          let lines = allText.split(/\r?\n/);
+          //console.log(lines);
+
+          for (let i = 0; i < lines.length; i++) {
+            let line = lines[i].split(";");
+            if(line[0]=="версиям"){
+              console.log(line);
+            }
+            if (line.length == 3) {
+              dict[line[0]] = [line[1], line[2]]
+            }
+          }
+        }
+      }
+    }
+    rawFile.send(null);
+  }
+
+  //alert("smth")
+  readTextFile("dictionary_simple.txt")
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const input = urlParams.get('input')
+
+  if(input != undefined) {
+    document.getElementById("text").value = input
+    f();
+  }
+
+  function rus(a){
+    punctuation = [
+       '<',
+        '>',
+        '!',
+        ',',
+        ' ',
+        '?',
+        ';',
+        ':',
+        '"',
+        '&',
+        '*',
+        '%',
+        '.',
+        '\'',
+        '[',
+        ']',
+        '(',
+        ')',
+        '{',
+        '}',
+        '\n',
+        '\r'
+    ]
+    for(let i = 0; i<punctuation.length; i++){
+      if(punctuation[i] == a){
+        return false
+      }
+    }
+    return true
+  }
+
+  function upperfy(w, u){
+    if(u){
+      return w[0].toUpperCase()+w.substr(1, w.length - 1)
+    }
+    else{
+      return w
+    }
+  }
+
+  function handleText(text){
+    if(dict == undefined){
+      readTextFile("dictionary_simple.txt")
+    }
+
+    res = ""
+    words = []
+    last = ""
+    for(let i = 0; i<text.length; i++){
+
+        if (rus(text[i])) {
+          last += text[i]
+        } else {
+          words.push(last)
+          if(text[i] == "\n" || text[i] == "\r"){
+            words.push("<br>")
+          }
+          else {
+            words.push(text[i])
+          }
+          last = ""
+        }
+
+    }
+    words.push(last)
+
+    for(let i = 0; i<words.length; i++){
+      if(words[i].length>0) {
+        let isUpper = words[i][0].toUpperCase() == words[i][0]
+        let w = words[i].toLowerCase()
+
+        if (dict[w] == undefined) {
+          res += upperfy(words[i], isUpper)
+        } else {
+          res += "<a href=" + dict[w][1] + ".html>" + upperfy(dict[w][0], isUpper) + "</a>"
+        }
+        res += ""
+      }
+    }
+    return res
+  }
+
+  function f(){
+    var inputVal = document.getElementById("text").value;
+    var p = document.getElementById("p")
+    p.innerHTML = handleText(inputVal);
+  }
+</script>
+
+
+</body>
+</html>
