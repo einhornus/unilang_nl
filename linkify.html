@@ -7,147 +7,232 @@
 <body>
 
 
-<textarea type="text" id="text" cols="100" rows="20" value=""></textarea>
+<textarea type="text" id="text" cols="100" rows="10" value=""></textarea>
 <br>
 <input type="button" onclick="f()" value="Linkify">
 
 <p id ="p"></p>
 
+
+
+<p id ="content"></p>
+
+
+
 <script >
 
-  let dict = null
+    let dict = null
+    let history = []
+    let poses = []
+    let nietpushen = false
 
-  function readTextFile(file)
-  {
-    dict = {}
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
+    function handleback(){
+        if(history.length <= 1){
+
+        }
+        else{
+            history.pop()
+
+            nietpushen = true
+            hndwrd(history[history.length - 1])
+            document.documentElement.scrollTop = poses[history.length - 1]
+        }
+
+        if(poses <= 1){
+
+        }
+        else{
+            document.documentElement.scrollTop = poses[poses.length - 1]
+            console.log("active", poses)
+            poses.pop()
+        }
+
+    }
+
+    document.onkeydown = checkKey;
+
+    function checkKey(e) {
+        e = e || window.event;
+
+        if (e.keyCode == '38') {
+            // up arrow
+        }
+        else if (e.keyCode == '40') {
+            // down arrow
+        }
+        else if (e.keyCode == '37') {
+            handleback()
+        }
+        else if (e.keyCode == '39') {
+            // right arrow
+        }
+    }
+
+    function hndwrd(wrd){
+        //console.log(document.documentElement.scrollTop)
+
+        if(!nietpushen) {
+            history.push(wrd)
+
+            if(history.length>1) {
+                poses.push(document.documentElement.scrollTop)
+            }
+        }
+        /*
+        var inputVal = document.getElementById("text").value;
+        var p = document.getElementById("p")
+        p.innerHTML = handleText(inputVal);
+        */
+
+        cont = readTextFile2(wrd+".html")
+        var content = document.getElementById("content")
+        content.innerHTML = cont;
+        //window.open(wrd+".html", '_blank');
+
+        nietpushen = false
+
+        console.log(history, poses)
+    }
+
+    function readTextFile2(file)
     {
-      if(rawFile.readyState === 4)
-      {
-        if(rawFile.status === 200 || rawFile.status == 0)
+        res = ""
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
         {
-          var allText = rawFile.responseText;
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
 
-          let lines = allText.split(/\r?\n/);
-          //console.log(lines);
+                    let lines = allText.split(/\r?\n/);
+                    //console.log(lines);
 
-          for (let i = 0; i < lines.length; i++) {
-            let line = lines[i].split(";");
-            if(line[0]=="версиям"){
-              console.log(line);
+                    for (let i = 0; i < lines.length; i++) {
+                        let line = lines[i].split(";");
+                        res+=line
+                    }
+                }
             }
-            if (line.length == 3) {
-              dict[line[0]] = [line[1], line[2]]
-            }
-          }
         }
-      }
+        rawFile.send(null);
+        return res
     }
-    rawFile.send(null);
-  }
 
-  //alert("smth")
-  readTextFile("dictionary_simple.txt")
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const input = urlParams.get('input')
+    function readTextFile(file)
+    {
+        dict = {}
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
 
-  if(input != undefined) {
-    document.getElementById("text").value = input
-    f();
-  }
+                    let lines = allText.split(/\r?\n/);
+                    //console.log(lines);
 
-  function rus(a){
-    punctuation = [
-       '<',
-        '>',
-        '!',
-        ',',
-        ' ',
-        '?',
-        ';',
-        ':',
-        '"',
-        '&',
-        '*',
-        '%',
-        '.',
-        '\'',
-        '[',
-        ']',
-        '(',
-        ')',
-        '{',
-        '}',
-        '\n',
-        '\r'
-    ]
-    for(let i = 0; i<punctuation.length; i++){
-      if(punctuation[i] == a){
+                    for (let i = 0; i < lines.length; i++) {
+                        let line = lines[i].split(";");
+                        if(line[0]=="версиям"){
+                            console.log(line);
+                        }
+                        if (line.length == 3) {
+                            dict[line[0]] = [line[1], line[2]]
+                        }
+                    }
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+
+    //alert("smth")
+    readTextFile("dictionary_simple.txt")
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const input = urlParams.get('input')
+
+    if(input != undefined) {
+        document.getElementById("text").value = input
+        f();
+    }
+
+    function rus(a){
+        if((a>='a' && a<='z') || (a>='A' && a<='Z') ){
+            return true;
+        }
+        if((a>='а' && a<='я') || (a>='А' && a<='Я') ){
+            return true;
+        }
+        if(a == 'ё' || a == 'Ё'){
+            return true
+        }
         return false
-      }
-    }
-    return true
-  }
-
-  function upperfy(w, u){
-    if(u){
-      return w[0].toUpperCase()+w.substr(1, w.length - 1)
-    }
-    else{
-      return w
-    }
-  }
-
-  function handleText(text){
-    if(dict == undefined){
-      readTextFile("dictionary_simple.txt")
     }
 
-    res = ""
-    words = []
-    last = ""
-    for(let i = 0; i<text.length; i++){
+    function upperfy(w, u){
+        if(u){
+            return w[0].toUpperCase()+w.substr(1, w.length - 1)
+        }
+        else{
+            return w
+        }
+    }
 
-        if (rus(text[i])) {
-          last += text[i]
-        } else {
-          words.push(last)
-          if(text[i] == "\n" || text[i] == "\r"){
-            words.push("<br>")
-          }
-          else {
-            words.push(text[i])
-          }
-          last = ""
+    function handleText(text){
+        if(dict == undefined){
+            readTextFile("dictionary_simple.txt")
         }
 
-    }
-    words.push(last)
+        res = ""
+        words = []
+        last = ""
+        for(let i = 0; i<text.length; i++){
 
-    for(let i = 0; i<words.length; i++){
-      if(words[i].length>0) {
-        let isUpper = words[i][0].toUpperCase() == words[i][0]
-        let w = words[i].toLowerCase()
+            if (rus(text[i])) {
+                last += text[i]
+            } else {
+                words.push(last)
+                if(text[i] == "\n" || text[i] == "\r"){
+                    words.push("<br>")
+                }
+                else {
+                    words.push(text[i])
+                }
+                last = ""
+            }
 
-        if (dict[w] == undefined) {
-          res += upperfy(words[i], isUpper)
-        } else {
-          res += "<a href=" + dict[w][1] + ".html>" + upperfy(dict[w][0], isUpper) + "</a>"
         }
-        res += ""
-      }
-    }
-    return res
-  }
+        words.push(last);
 
-  function f(){
-    var inputVal = document.getElementById("text").value;
-    var p = document.getElementById("p")
-    p.innerHTML = handleText(inputVal);
-  }
+
+        for(let i = 0; i<words.length; i++){
+            if(words[i].length>0) {
+                let isUpper = words[i][0].toUpperCase() == words[i][0]
+                let w = words[i].toLowerCase()
+
+                if (dict[w] == undefined) {
+                    res += upperfy(words[i], isUpper)
+                } else {
+                    res += "<a href=#  onclick=hndwrd(\'"+dict[w][1]+"\');>" + upperfy(dict[w][0], isUpper) + "</a>"
+                }
+                res += ""
+            }
+        }
+        return res
+    }
+
+    function f(){
+        var inputVal = document.getElementById("text").value;
+        var p = document.getElementById("p")
+        p.innerHTML = handleText(inputVal);
+    }
 </script>
 
 

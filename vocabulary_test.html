@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vocabulary test</title>
+</head>
+<body>
+
+
+
+<p id ="info"></p>
+
+
+<input type="button" id="b0" onclick="answer(0)" value="">
+<br>
+<input type="button" id="b1" onclick="answer(1)" value="">
+<br>
+<input type="button" id="b2" onclick="answer(2)" value="">
+<br>
+<input type="button" id="b3" onclick="answer(3)" value="">
+<br>
+<input type="button" id="b4" onclick="answer(4)" value="">
+<br>
+<input type="button" id="b5" onclick="answer(5)" value="">
+<br>
+<input type="button" id="b6" onclick="answer(6)" value="">
+<br>
+<input type="button" id="b7" onclick="answer(7)" value="">
+<br>
+<input type="button" id="b8" onclick="answer(8)" value="">
+<br>
+<input type="button" id="b9" onclick="answer(9)" value="">
+<br>
+
+<p id ="expl"></p>
+
+
+<input type="button" id="next"  onclick="nextQuestion()" value="Next">
+<p id ="content"></p>
+
+
+
+<script >
+
+    let dict = null
+    let history = []
+    let poses = []
+    let nietpushen = false
+    let vocab = []
+
+    let nmax = 20
+    let curnum = 1
+    let mode = false
+    let buttons = []
+    let diff = 1
+
+    function init(){
+        buttons.push(document.getElementById("b0"));
+        buttons.push(document.getElementById("b1"));
+        buttons.push(document.getElementById("b2"));
+        buttons.push(document.getElementById("b3"));
+        buttons.push(document.getElementById("b4"));
+        buttons.push(document.getElementById("b5"));
+        buttons.push(document.getElementById("b6"));
+        buttons.push(document.getElementById("b7"));
+        buttons.push(document.getElementById("b8"));
+        buttons.push(document.getElementById("b9"));
+    }
+
+
+    function answer(index){
+        if(!mode){
+            curnum++;
+            mode = true
+            document.getElementById("next").style.width = "200px"
+            document.getElementById("next").style.visibility = "visible";
+
+            if(curquest[0][index][1]){
+                document.getElementById("expl").innerText = "Correct!"
+                goodAnswers++;
+            }
+            else{
+                document.getElementById("expl").innerText = "Wrong, the correct answer is "+curquest[2]
+            }
+        }
+        else{
+            hndwrd(buttons[index].value)
+        }
+    }
+
+    function hndwrd(wrd){
+        //console.log(document.documentElement.scrollTop)
+
+        if(!nietpushen) {
+            history.push(wrd)
+
+            if(history.length>1) {
+                poses.push(document.documentElement.scrollTop)
+            }
+        }
+        /*
+        var inputVal = document.getElementById("text").value;
+        var p = document.getElementById("p")
+        p.innerHTML = handleText(inputVal);
+        */
+
+        cont = readTextFile2(wrd+".html")
+        var content = document.getElementById("content")
+        content.innerHTML = cont;
+        //window.open(wrd+".html", '_blank');
+
+        nietpushen = false
+
+    }
+
+    function randomInt(min, max) {
+        return min + Math.floor((max - min) * Math.random());
+    }
+
+    function randomFloat(min, max) {
+        return min + (max - min) * Math.random();
+    }
+
+    function shuffle(a) {
+        var j, x, i;
+        for (i = a.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = a[i];
+            a[i] = a[j];
+            a[j] = x;
+        }
+        return a;
+    }
+
+    function getQuestion(index){
+        size = Math.floor(vocab.length/nmax/diff)
+        minIndex = index*size
+        maxIndex = Math.min((index+1)*size, vocab.length - 1)
+
+        console.log(minIndex, maxIndex)
+
+        numberIndex = randomInt(minIndex, maxIndex)
+        definitionIndex = randomInt(0, vocab[numberIndex].length)
+
+        word = vocab[numberIndex][definitionIndex][0]
+        def = vocab[numberIndex][definitionIndex][1]
+        pos = vocab[numberIndex][definitionIndex][2]
+
+        res = []
+        for(let i = 0; i<10; i++){
+            res.push([])
+        }
+
+        rightIndex = randomInt(0, 10)
+        res[rightIndex] = [word, true]
+
+        minIndex = numberIndex-size
+        maxIndex = numberIndex+size
+        if(minIndex < 0){
+            minIndex = 0
+        }
+        if(maxIndex >= vocab.length){
+            maxIndex = vocab.length - 1
+        }
+
+
+        goodsies = []
+        let set = new Set()
+        set.add(word)
+        for(let j = minIndex; j<=maxIndex; j++){
+            for(let k = 0; k<vocab[j].length; k++){
+                if(j != numberIndex) {
+                    numberIndex2 = j
+                    definitionIndex2 = k
+
+                    word2 = vocab[numberIndex2][definitionIndex2][0]
+                    def2 = vocab[numberIndex2][definitionIndex2][1]
+                    pos2 = vocab[numberIndex2][definitionIndex2][2]
+
+                    let goodpos = false
+                    if (pos == "NOUN" || pos == "VERB" || pos == "ADJECTIVE") {
+                        goodpos = pos2 == pos
+                    } else {
+                        goodpos = pos2 != "NOUN" && pos2 != "VERB" && pos2 != "ADJECTIVE"
+                    }
+
+                    if (goodpos && !set.has(word2)) {
+                        goodsies.push([word2, false])
+                        set.add(word2)
+                    }
+                }
+            }
+        }
+
+        while (goodsies.length <= res.length - 1){
+            numberIndex3 = randomInt(0, vocab.length - 1)
+            definitionIndex3 = randomInt(0, vocab[numberIndex3].length)
+            word5 = vocab[numberIndex3][definitionIndex3][0]
+            if(!set.has(word5)) {
+                goodsies.push([word5, false])
+                set.add(word5)
+            }
+        }
+
+        shuffle(goodsies);
+
+        let gi = 0
+        for(let i = 0; i<res.length; i++){
+            if(i != rightIndex){
+                res[i] = goodsies[gi]
+                gi+=1
+            }
+        }
+
+        rrr = [res, def, word]
+
+        console.log(goodsies)
+        console.log(rrr)
+
+        return rrr
+    }
+
+    function showResults(){
+
+        for(let i = 0; i<buttons.length; i++){
+            buttons[i].style.visibility = "hidden"
+        }
+
+        document.getElementById("next").style.visibility = "hidden"
+        document.getElementById("expl").innerText = ""
+        document.getElementById("info").innerHTML = "Congratulations! You answered "+goodAnswers+"/"+nmax + " questions correctly";
+        document.getElementById("content").innerHTML = "";
+    }
+
+    let curquest = null
+    let goodAnswers = 0
+
+    function nextQuestion(){
+        document.getElementById("content").innerHTML = "";
+        if(curnum >= nmax+1){
+            showResults()
+            mode = true
+        }
+        else{
+            document.getElementById("expl").innerText = ""
+            mode = false
+            let is = "Question "+curnum+"<br>";
+
+            for(let i = 0; i<buttons.length; i++){
+                buttons[i].style.width = "200px"
+            }
+
+            curquest = getQuestion(curnum)
+            is += curquest[1]
+
+            document.getElementById("info").innerHTML = is;
+
+            console.log(buttons)
+            for(let q = 0; q<buttons.length; q++){
+                buttons[q].value = curquest[0][q][0]
+            }
+
+            document.getElementById("next").style.visibility = "hidden";
+        }
+
+    }
+
+    readTextFile3("vocab.txt")
+    init()
+    nextQuestion()
+
+    function handleback(){
+        if(history.length <= 1){
+
+        }
+        else{
+            history.pop()
+
+            nietpushen = true
+            hndwrd(history[history.length - 1])
+            document.documentElement.scrollTop = poses[history.length - 1]
+        }
+
+        if(poses <= 1){
+
+        }
+        else{
+            document.documentElement.scrollTop = poses[poses.length - 1]
+            console.log("active", poses)
+            poses.pop()
+        }
+
+    }
+
+    document.onkeydown = checkKey;
+
+    function checkKey(e) {
+        e = e || window.event;
+
+        if (e.keyCode == '38') {
+            // up arrow
+        }
+        else if (e.keyCode == '40') {
+            // down arrow
+        }
+        else if (e.keyCode == '37') {
+            handleback()
+        }
+        else if (e.keyCode == '39') {
+            // right arrow
+        }
+    }
+
+    function hndwrd(wrd){
+        //console.log(document.documentElement.scrollTop)
+
+        if(!nietpushen) {
+            history.push(wrd)
+
+            if(history.length>1) {
+                poses.push(document.documentElement.scrollTop)
+            }
+        }
+        /*
+        var inputVal = document.getElementById("text").value;
+        var p = document.getElementById("p")
+        p.innerHTML = handleText(inputVal);
+        */
+
+        cont = readTextFile2(wrd+".html")
+        var content = document.getElementById("content")
+        content.innerHTML = cont;
+        //window.open(wrd+".html", '_blank');
+
+        nietpushen = false
+
+    }
+
+    function readTextFile2(file)
+    {
+        res = ""
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+
+                    let lines = allText.split(/\r?\n/);
+                    //console.log(lines);
+
+                    for (let i = 0; i < lines.length; i++) {
+                        let line = lines[i].split(";");
+                        res+=line
+                    }
+                }
+            }
+        }
+        rawFile.send(null);
+        return res
+    }
+
+    function readTextFile3(file)
+    {
+        vocab = []
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+
+                    let lines = allText.split(/\r?\n/);
+                    //console.log(lines);
+
+                    let prevIndex = 0
+                    for (let i = 0; i < lines.length; i++) {
+                        let line = lines[i].split(";");
+                        index = parseInt(line[3])
+                        pos = line[2]
+                        word = line[0]
+                        def = line[1]
+
+                        if(index != prevIndex) {
+                            vocab.push([])
+                            prevIndex = index
+                        }
+
+                        vocab[vocab.length - 1].push([word, def, pos])
+                    }
+                }
+            }
+        }
+
+        rawFile.send(null);
+    }
+
+    function readTextFile(file)
+    {
+        dict = {}
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+
+                    let lines = allText.split(/\r?\n/);
+                    //console.log(lines);
+
+                    for (let i = 0; i < lines.length; i++) {
+                        let line = lines[i].split(";");
+                        if(line[0]=="версиям"){
+                            console.log(line);
+                        }
+                        if (line.length == 3) {
+                            dict[line[0]] = [line[1], line[2]]
+                        }
+                    }
+                }
+            }
+        }
+        rawFile.send(null);
+    }
+
+    //alert("smth")
+    readTextFile("dictionary_simple.txt")
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    nmax = urlParams.get('n')
+    diff = urlParams.get('diff')
+
+    if(nmax == null){
+        nmax = 10
+    }
+
+    if(diff == null){
+        diff = 4
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>
