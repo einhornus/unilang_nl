@@ -1,661 +1,661 @@
-ik;i (first-person singular personal pronoun);PRONOUN;1
-het;it;PRONOUN;2
-het;it;PRONOUN;2
-dat;that (neuter);DETERMINER;3
-dat;(demonstrative) that, that there;PRONOUN;3
-niet;not, no: used to express negation;ADVERB;4
-niet;staple;NOUN;4
-een;(indefinite article) placed before a singular noun, indicating a general case of a person or thing: a, an;DETERMINER;5
-een;one;NOUN;5
-en;and;CONJUNCTION;6
-en;well, so;CONJUNCTION;6
-en;(mathematics) plus, and;CONJUNCTION;6
-wat;(interrogative) what: e;PRONOUN;7
-wat;(relative) what: e;PRONOUN;7
-wat;(relative) that: e;PRONOUN;7
-hij;third-person singular, masculine, subjective: he;PRONOUN;8
-zijn;(intransitive) to be, to exist;VERB;9
-zijn;(transitive, copulative) used to connect a noun to an adjective that describes it;VERB;9
-te;(modifying an infinitive verb) to;PRESPOSITION;10
-als;(subordinating) if, when;CONJUNCTION;11
-als;when, as soon as;CONJUNCTION;11
-als;like, as ;PRESPOSITION;11
-dit;this (neuter);DETERMINER;12
-dit;(demonstrative) this, this here;PRONOUN;12
-hier;here;ADVERB;13
-hier;(with a preposition) this;ADVERB;13
-dan;then, after that;ADVERB;14
-dan;then, in that case;ADVERB;14
-wel;the opposite of not (used to add positive emphasis to the verb, much like the auxiliaries "do" or "does" in affirmative sentences in english)  ik dacht dat je niet van golf hield;ADVERB;15
-wel;fairly;ADVERB;15
-nog;still, as before;ADVERB;16
-nog;(in negative phrases) yet;ADVERB;16
-nog;(with an amount) more, in addition;ADVERB;16
-geen;no, not a, not an, not any;DETERMINER;17
-geen;none;DETERMINER;17
-geen;(archaic) yonder, farde gene zijdethe far side;ADJECTIVE;17
-zo;so, thus, like that/this;ADVERB;18
-zo;so, that, to such an extent;ADVERB;18
-hem;(personal) third-person singular, masculine, objective: him;PRONOUN;19
-hem;(personal) the tagger in a game of tag: it;PRONOUN;19
-hebben;(transitive) to have, to possess, own, hold;VERB;20
-hebben;(transitive, medicine) to be afflicted with a disease;VERB;20
-ja;yes;ADVERB;21
-ja;yes;NOUN;21
-ja;yes;INTERJECTION;21
-hoe;how;ADVERB;22
-nee;no;ADVERB;23
-haar;(personal) third-person singular, feminine object pronoun: her;PRONOUN;24
-haar;third-person singular, feminine possessive adjective: her;DETERMINER;24
-ook;also, too, moreover;ADVERB;25
-ook;(in negative sentences) either;ADVERB;25
-doen;(transitive) to do;VERB;26
-doen;(transitive) to put;VERB;26
-doen;(auxiliary) to cause to, to make;VERB;26
-gaan;(intransitive) to go, to move from one place to another;VERB;27
-gaan;(intransitive) to leave or depart, to move away;VERB;27
-gaan;(intransitive) to lead (in a direction)  deze weg gaat helemaal naar limburg;VERB;27
-daar;there;ADVERB;28
-daar;(with a preposition) that;ADVERB;28
-al;yet;ADVERB;29
-of;(coordinating) or;CONJUNCTION;30
-of;(subordinating) whether, if;CONJUNCTION;30
-ons;metric ounce (;NOUN;31
-iets;something;PRONOUN;32
-iets;anything;PRONOUN;32
-iets;somewhat;ADVERB;32
-wie;(interrogative, subjective or objective) who, whom;PRONOUN;33
-wie;(relative, subjective or objective) who, whom;PRONOUN;33
-moeten;(intransitive) to be necessary, to be required;VERB;34
-moeten;(auxiliary) to have to, must;VERB;34
-moeten;(auxiliary) should, be meant to, be supposed to;VERB;34
-alles;(indefinite) everything;PRONOUN;35
-kunnen;(intransitive) to be possible;VERB;36
-kunnen;(auxiliary) can, to be able to;VERB;36
-kunnen;(auxiliary) may, can, to be allowed to;VERB;36
-toch;still, nevertheless, anyway;ADVERB;37
-toch;after all, despite what was expected;ADVERB;37
-toch;yes, surely;ADVERB;37
-echt;authentic, true, genuine, real;ADJECTIVE;38
-echt;really, truly;ADVERB;38
-echt;marriage, matrimony;NOUN;38
-zien;(transitive) to see;VERB;39
-weg;way, road;NOUN;40
-weg;away;ADVERB;40
-weg;gone, disappeared;ADVERB;40
-nou;now;ADVERB;41
-nou;come on;ADVERB;41
-nou;so, well;INTERJECTION;41
-alleen;alone, by oneself;ADJECTIVE;42
-alleen;lonely;ADJECTIVE;42
-alleen;only, exclusively;ADVERB;42
-nooit;never;ADVERB;43
-dus;thus, so, ergo;ADVERB;44
-man;husband, male spouse;NOUN;45
-even;shortly, briefly;ADVERB;46
-even;for a short period, for a while;ADVERB;46
-even;for a moment;ADVERB;46
-eens;once, one time;ADVERB;47
-eens;sometime, at an unspecified time;ADVERB;47
-eens;even;ADVERB;47
-terug;back, to a previous place or condition;ADVERB;48
-terug;back, in return;ADVERB;48
-misschien;perhaps, maybe;ADVERB;49
-laten;(copulative) to leave, to cause to remain in the same position or state;VERB;50
-laten;(auxiliary, with object) to leave, to allow to remain/continue to;VERB;50
-laten;(auxiliary, with object) to let, to allow to;VERB;50
-niets;nothing;PRONOUN;51
-iemand;someone;PRONOUN;52
-komen;(intransitive) to come;VERB;53
-komen;(intransitive) to happen, to arise, to come to be, to be caused;VERB;53
-toen;back then, at the time, in those days;ADVERB;54
-zeggen;(transitive) to say, tell;VERB;55
-worden;(copulative) to become;VERB;56
-leven;(intransitive) to live;VERB;57
-leven;life;NOUN;57
-nodig;necessary, needed;ADJECTIVE;58
-nodig;(only in attribute position) some amount or degree of, a certain level of, some;ADJECTIVE;58
-nodig;necessarily, badly, urgently;ADVERB;58
-gewoon;regular, ordinary, usual;ADJECTIVE;59
-gewoon;normal, common;ADJECTIVE;59
-gewoon;simply, just;ADVERB;59
-twee;two;NOUN;60
-twee;two;NOUN;60
-net;television channel;NOUN;61
-altijd;always;ADVERB;62
-maken;(transitive) to make;VERB;63
-maken;(transitive) to fix, to repair, to mend;VERB;63
-maken;(transitive) to take (a photo);VERB;63
-tijd;time;NOUN;64
-tijd;(grammar) tense;NOUN;64
-omdat;because;CONJUNCTION;65
-zeker;certain, sure;ADJECTIVE;66
-zeker;confident, secure;ADJECTIVE;66
-zeker;confirmed;ADJECTIVE;66
-dag;day (period of ;NOUN;67
-dag;daytime (time between sunrise and sunset);NOUN;67
-vrouw;woman;NOUN;68
-vrouw;wife;NOUN;68
-allemaal;all, everyone;PRONOUN;69
-vader;father;NOUN;70
-vader;forefather;NOUN;70
-anders;otherwise;ADVERB;71
-jaar;year;NOUN;72
-willen;to want, to desire;VERB;73
-erg;serious, considerable, severe;ADJECTIVE;74
-erg;awful, terrible;ADJECTIVE;74
-erg;very;ADVERB;74
-zitten;(intransitive) to sit;VERB;75
-zitten;(intransitive) to be, to be placed or located;VERB;75
-jouw;your;DETERMINER;76
-jouw;expression of scorn;INTERJECTION;76
-jouw;a jeer;NOUN;76
-zoals;as, just like, just as, the way that;CONJUNCTION;77
-niemand;nobody, no one;PRONOUN;78
-iedereen;everyone;PRONOUN;79
-zich;expresses an unintended result with many otherwise non-reflexive and ergative verbs;PRONOUN;80
-moeder;mother, female parent;NOUN;81
-moeder;(archaic) womb;NOUN;81
-praten;(intransitive) to talk;VERB;82
-mooi;beautiful, pretty, handsome;ADJECTIVE;83
-mooi;nice, good;ADJECTIVE;83
-genoeg;enough;DETERMINER;84
-genoeg;plenty;DETERMINER;84
-genoeg;enough, to enough of a degree, with sufficient frequency;ADVERB;84
-vinden;(transitive) to find (after searching)  gevonden;VERB;85
-vinden;(transitive) to find, to come across;VERB;85
-vinden;(transitive, copulative) to find, to think, to feel, to be of opinion;VERB;85
-lang;long;ADJECTIVE;86
-lang;tall;ADJECTIVE;86
-lang;long (time), lengthy, a long time;ADJECTIVE;86
-leuk;likable;ADJECTIVE;87
-leuk;funny, jolly;ADJECTIVE;87
-leuk;nice, pleasant, enjoyable;ADJECTIVE;87
-graag;please (when being offered something);INTERJECTION;88
-helpen;(transitive) to help;VERB;89
-helpen;(transitive) to provide, to supply ;VERB;89
-helpen;(transitive) to get hooked, to cause (someone) to be very keen (on), addicted or depended ;VERB;89
-elkaar;each other, one another;PRONOUN;90
-natuurlijk;naturally;ADVERB;91
-natuurlijk;of course;ADVERB;91
-natuurlijk;natural;ADJECTIVE;91
-hallo;hello (a general greeting used when meeting somebody) ;INTERJECTION;92
-helemaal;completely;ADVERB;93
-helemaal;(colloquial) anyway;ADVERB;93
-gek;crazy, mad;ADJECTIVE;94
-gek;ludicrous, farcical;ADJECTIVE;94
-gek;silly, playful;ADJECTIVE;94
-alle;all (every individual of the given class);ADVERB;95
-drie;three;NOUN;96
-meneer;sir, mister;NOUN;97
-blijven;(intransitive) to stay, to remain;VERB;98
-blijven;(copulative) to stay, to remain, to still be;VERB;98
-blijven;(auxiliary) to keep/keep on, to continue to;VERB;98
-zonder;without;PRESPOSITION;99
-dingen;(transitive) to solicit;VERB;100
-houden;(transitive, of animals) to keep, to care for;VERB;101
-alsjeblieft;please;ADVERB;102
-alsjeblieft;here you are;ADVERB;102
-krijgen;(transitive) to get, to receive, to come into possession of (anything ranging from concrete to abstract inputs such as news, gift, punishment, et cetera)  ze heeft van haar familie een huwelijkskado gekregen;VERB;103
-krijgen;(copulative) to get, to (manage to) cause to become;VERB;103
-kijken;(intransitive) to look ;VERB;104
-kijken;(transitive) to watch (e;VERB;104
-vriend;(male) friend;NOUN;105
-vriend;boyfriend (romantic partner);NOUN;105
-idee;idea;NOUN;106
-idee;&#;NOUN;106
-bang;scared, frightened;ADJECTIVE;107
-bang;fearful;ADJECTIVE;107
-bang;anxious;ADJECTIVE;107
-steeds;always, continually, all the time, every time, each time;ADVERB;108
-geven;(transitive) to give;VERB;109
-eerste;first;ADJECTIVE;110
-naam;name;NOUN;111
-naam;name;PRONOUN;111
-vertellen;(transitive) to tell;VERB;112
-wanneer;when;ADVERB;113
-wanneer;when;CONJUNCTION;113
-wanneer;whenever;CONJUNCTION;113
-ie;(obsolete) always, every time, continuously;ADVERB;114
-beetje;a bit, a little bit, somewhat;ADVERB;115
-beetje;a bit of, a little bit of, some (before mass nouns);DETERMINER;115
-eten;(transitive, intransitive) to eat;VERB;116
-eten;food;NOUN;116
-eten;dinner;NOUN;116
-vragen;(transitive) to ask a question;VERB;117
-vragen;(transitive) to demand, exact;VERB;117
-vragen;(transitive) to require, need;VERB;117
-zelf;(intensifier) oneself, referring to the subject of a sentence: myself, yourself, itself, ourselves, themselves etc;ADVERB;118
-zelf;oneself, by oneself, alone;ADVERB;118
-zelf;self;NOUN;118
-jongen;a boy, any male child;NOUN;119
-o;letter;INTERJECTION;120
-o;upper case;INTERJECTION;120
-morgen;tomorrow;ADVERB;121
-morgen;morning;NOUN;121
-staan;(intransitive) to stand, to be upright;VERB;122
-staan;(intransitive) to be, to be placed or located;VERB;122
-zorgen;(intransitive) to make sure, to ensure;VERB;123
-want;for, because;CONJUNCTION;124
-want;mitten;NOUN;124
-want;shroud, sideways support for a mast;NOUN;124
-thuis;one's home;NOUN;125
-heen;away;ADVERB;126
-heen;(postpositional) to, towards;ADVERB;126
-heen;(slang) gone, outside the boundaries of the norms;ADVERB;126
-geweldig;tremendous, great;ADJECTIVE;127
-geweldig;awesome, wonderful;ADJECTIVE;127
-wereld;world;NOUN;128
-nemen;(transitive) to take, to take hold of, to grasp or grab;VERB;129
-nemen;(transitive) to take, to choose out of some options, to pick;VERB;129
-nemen;(transitive) to take, to use a particular route or type of transport;VERB;129
-jongens;boy;INTERJECTION;130
-meisje;girlfriend;NOUN;131
-denken;(intransitive) to think ;VERB;132
-enige;(masculine, feminine, with de) only one;PRONOUN;133
-enige;(neuter, with het) only thing;PRONOUN;133
-samen;together;ADVERB;134
-vandaag;today;ADVERB;135
-halen;(transitive) to fetch, to get;VERB;136
-halen;(transitive) to reach (a goal), to catch;VERB;136
-eerst;first, at first, before something else;ADVERB;137
-eerst;at first, before, earlier;ADVERB;137
-eerst;only, not until;ADVERB;137
-eigen;own;ADJECTIVE;138
-eigen;self;ADJECTIVE;138
-rustig;calm, tranquil, quiet;ADJECTIVE;139
-rustig;taking one's time, not hurried;ADJECTIVE;139
-horen;(transitive) to hear;VERB;140
-horen;(intransitive) to belong;VERB;140
-horen;(auxiliary, with te) to be supposed to, to be meant to;VERB;140
-soms;sometimes;ADVERB;141
-soms;(in questions) maybe, perhaps;ADVERB;141
-uur;an hour, a period of time;NOUN;142
-uur;the hour, the time of day;NOUN;142
-uur;o'clock;NOUN;142
-zoon;son;NOUN;143
-politie;police;NOUN;144
-politie;(obsolete) policy, governance;NOUN;144
-probleem;problem;NOUN;145
-bijna;almost;ADVERB;146
-bijna;soon;ADVERB;146
-kind;child, kid, non-adult human;NOUN;147
-kind;descendant, still a minor or irrespective of age;NOUN;147
-kind;(figuratively) product of influence, breeding etc;NOUN;147
-hen;them (object pronoun);PRONOUN;148
-hen;a female of the species of birds brooding on the ground;NOUN;148
-precies;exact, precise;ADJECTIVE;149
-precies;accurate, careful;ADJECTIVE;149
-precies;exactly, precisely;ADVERB;149
-wachten;(intransitive) to wait ;VERB;150
-verder;further;ADVERB;151
-verder;furthermore, on top of that, otherwise, for the rest;ADVERB;151
-alsof;as if;CONJUNCTION;152
-kant;way, direction;NOUN;153
-eigenlijk;actual;ADJECTIVE;154
-eigenlijk;actually, really, in reality;ADVERB;154
-volgens;according to;PRESPOSITION;155
-werken;(intransitive) to work, labour;VERB;156
-werken;(intransitive) to work, to be effective;VERB;156
-werken;(intransitive) to function, be in working order;VERB;156
-best;fine, okay;ADJECTIVE;157
-best;quite, rather;ADVERB;157
-familie;relatives (extended kin);NOUN;158
-familie;family (close kin)  synonym: gezin;NOUN;158
-familie;(taxonomy) family;NOUN;158
-dagen;(intransitive) to dawn;VERB;159
-dagen;(transitive) to light, illuminate, color by lighting;VERB;159
-dagen;(intransitive) to rise;VERB;159
-hoeveel;how much, how many;DETERMINER;160
-vijf;five;NOUN;161
-spreken;(transitive or intransitive) to speak;VERB;162
-blij;happy;ADJECTIVE;163
-blij;glad;ADJECTIVE;163
-blij;(archaic) lead (metal);NOUN;163
-prima;excellent, fine;ADJECTIVE;164
-lekker;having a nice taste, tasty, delectable;ADJECTIVE;165
-lekker;good, nice, pleasant in a more generic sense;ADJECTIVE;165
-lekker;(attributive, colloquial) hot, sexy, physically attractive;ADJECTIVE;165
-kamer;a room, a chamber;NOUN;166
-kamer;a chamber of a gun;NOUN;166
-kamer;a chamber of parliament (legislative body);NOUN;166
-hoofd;head;NOUN;167
-hoofd;head (of an organisation), chief, boss;NOUN;167
-hoofd;a breakwater, jetty or pier at the entrance of a sea harbour;NOUN;167
-zoeken;(intransitive) to search ;VERB;168
-zoeken;(transitive) to look for, to seek;VERB;168
-stad;city, town;NOUN;169
-stad;the town/city centre;NOUN;169
-geloven;(intransitive) to believe, to hold a belief ;VERB;170
-geloven;(transitive) to believe, to be convinced by;VERB;170
-pijn;physical pain, ache;NOUN;171
-pijn;psychological pain, hurt;NOUN;171
-pijn;(rare) pine (tree);NOUN;171
-jezelf;yourself;PRONOUN;172
-kans;chance;NOUN;173
-kans;opportunity;NOUN;173
-kans;(mathematics) probability;NOUN;173
-ogen;(copulative) to look, to appear;VERB;174
-ogen;(intransitive, obsolete) to look intensely;VERB;174
-ogen;(transitive, obsolete) to see, to view, to eye;VERB;174
-manier;way, manner;NOUN;175
-ergens;somewhere, anywhere;ADVERB;176
-ergens;somehow, in some unspecified way;ADVERB;176
-mooie;manx;ADJECTIVE;177
-mooie;out, outside;ADVERB;177
-brengen;(transitive) to bring, to carry;VERB;178
-brengen;(transitive) to deliver, to supply;VERB;178
-spelen;(intransitive) to play;VERB;179
-spelen;(transitive or intransitive) to play (a musical instrument);VERB;179
-deur;door;NOUN;180
-broer;brother (male sibling)  synonym: broeder;NOUN;181
-dokter;doctor (physician, medical doctor);NOUN;182
-dokter;doctor, a physician;NOUN;182
-bed;layer, often a substratum;NOUN;183
-hulp;help, assistance, rescue;NOUN;184
-zaak;shop, small store, business;NOUN;185
-zaak;(law) case, suit;NOUN;185
-zaak;general term with which one indicates a thing or a concept that is not a person or creature: thing;NOUN;185
-groot;big, large, great;ADJECTIVE;186
-groot;great, important, eminent, heroic;ADJECTIVE;186
-groot;tall;ADJECTIVE;186
-juist;right, correct;ADJECTIVE;187
-juist;just;ADJECTIVE;187
-juist;just, at that moment;ADVERB;187
-zoveel;so many, so much;DETERMINER;188
-zoveel;that many, that much;DETERMINER;188
-later;having to do with or occurring in the future;ADJECTIVE;189
-vergeten;to forget (fail to do)  ik vergat de deur op slot te doen;VERB;190
-vooruit;ahead, onward;ADVERB;191
-vooruit;come on, go on (used to drive someone forward);INTERJECTION;191
-vooruit;fine, oh all right then (said when grudgingly accepting a suggestion for a certain action);INTERJECTION;191
-bellen;(intransitive) to ring, like using a bell;VERB;192
-bellen;(transitive) to call, by bell (originally) or (now mostly) telephone;VERB;192
-bellen;(regional, southern) (intransitive) to bark, like a canine;VERB;192
-proberen;to try, to attempt;VERB;193
-papa;dad (term of address for one’s father, especially used by young children);NOUN;194
-soort;sort, kind;NOUN;195
-soort;(biology, taxonomy) species;NOUN;195
-lopen;(intransitive, chiefly belgium) to run, go fast on one's own legs;VERB;196
-lopen;(intransitive, chiefly belgium) to run, cover distance, follow a track etc;VERB;196
-lopen;(intransitive, chiefly netherlands) to walk, go somewhere regardless of speed;VERB;196
-dochter;daughter (female offspring);NOUN;197
-dochter;(figuratively) offshoot, something derivative or subordinate;NOUN;197
-meteen;immediately;ADVERB;198
-doden;(transitive) to kill;VERB;199
-beginnen;(ergative) to begin;VERB;200
-gebruiken;(transitive) to use;VERB;201
-gebruiken;(transitive) to consume, to eat or drink (food or drink)  synonyms: consumeren, nuttigen;VERB;201
-gebruiken;(transitive) to consume (resources or goods)  synonyms: consumeren, verbruiken;VERB;201
-mevrouw;madam, miss;NOUN;202
-leren;(transitive) to learn;VERB;203
-leren;(transitive) to teach;VERB;203
-klootzak;(dated, literally) a ball sack;NOUN;204
-klootzak;(vulgar) a common term of abuse for a man, similar to bastard, asshole;NOUN;204
-slapen;to sleep;VERB;205
-zoiets;something like that, such a thing;PRONOUN;206
-zoiets;(with a partitive adjective) such a ;PRONOUN;206
-zoiets;something like that, something similar, the like;PRONOUN;206
-liefde;love;NOUN;207
-moeilijk;hard, difficult;ADJECTIVE;208
-tien;ten;NOUN;209
-voorbij;over (finished);ADVERB;210
-gelukkig;happy;ADJECTIVE;211
-gelukkig;pleased, satisfied;ADJECTIVE;211
-gelukkig;lucky;ADJECTIVE;211
-nacht;night;NOUN;212
-nummer;number used as a means of identification;NOUN;213
-nummer;number (used to show the rank of something in a list or sequence);NOUN;213
-zodat;such that (indicating result or consequence);CONJUNCTION;214
-zodat;in order that, so that (indicating goal or intent)  synonym: opdat;CONJUNCTION;214
-wakker;awake;ADJECTIVE;215
-mogen;(intransitive) to be allowed;VERB;216
-mogen;(auxiliary) may, can, be allowed to;VERB;216
-mogen;(intransitive) may go, can go, to be allowed to go;VERB;216
-zes;six;NOUN;217
-gebeuren;(intransitive) to happen;VERB;218
-gebeuren;something which is happening or which happened;NOUN;218
-sinds;since;PRESPOSITION;219
-fijn;nice, pleasant;ADJECTIVE;220
-fijn;fine, thin;ADJECTIVE;220
-fijn;delicate, meticulous;ADJECTIVE;220
-voordat;(subordinating) before;CONJUNCTION;221
-bezig;busy, occupied;ADJECTIVE;222
-hart;heart, main muscle pumping blood through the body:;NOUN;223
-hart;the center point or zone of an object, image etc;NOUN;223
-hart;the core or essence of some thing, reasoning etc;NOUN;223
-klein;small, little;ADJECTIVE;224
-klein;almost;ADJECTIVE;224
-vermoorden;(transitive) to murder;VERB;225
-liggen;(intransitive) to lie;VERB;226
-liggen;(intransitive, often of place names) to be, to be placed or located;VERB;226
-stoppen;to stop, to halt;VERB;227
-stoppen;to plug;VERB;227
-stoppen;to stuff, to put, to insert;VERB;227
-straks;later today, shortly, in a moment;ADVERB;228
-straks;(  suriname, elsewhere  dialectal) immediately, right now;ADVERB;228
-hetzelfde;the same (used to modify neuter nouns);DETERMINER;229
-drinken;(transitive) to drink;VERB;230
-drinken;drink, beverage;NOUN;230
-aardig;friendly, nice;ADJECTIVE;231
-aardig;nice;ADJECTIVE;231
-aardig;considerable, substantial;ADJECTIVE;231
-eerder;previous, prior;ADJECTIVE;232
-eerder;earlier;ADVERB;232
-ander;other;ADJECTIVE;233
-ander;different;ADJECTIVE;233
-ander;(archaic) second;ADJECTIVE;233
-waarheid;truth;NOUN;234
-neer;down, downwards;ADVERB;235
-beneden;below;ADVERB;236
-beneden;downstairs;ADVERB;236
-agent;a police officer;NOUN;237
-zaken;business;NOUN;238
-gezicht;seeing, the ability to observe visually, vision, sight;NOUN;239
-gezicht;face, front-side of a head;NOUN;239
-gezicht;sight, visual impression, view, vision;NOUN;239
-oud;old;ADJECTIVE;240
-oud;alternative spelling of ud;NOUN;240
-vallen;(intransitive) to fall, to tumble;VERB;241
-vallen;(intransitive) to fall, to begin (of a time period)  de avond valt;VERB;241
-vallen;(auxiliary, with te) to be able to be;VERB;241
-avond;evening, night;NOUN;242
-vaak;often;ADVERB;243
-vaak;frequent, regular;ADJECTIVE;243
-vaak;sleepiness;NOUN;243
-oorlog;war;NOUN;244
-nieuws;news;NOUN;245
-hoi;(dated) an exclamation of joy;INTERJECTION;246
-hoi;water;NOUN;246
-schuld;(finance, accounting) debt, account payable;NOUN;247
-plek;spot, place;NOUN;248
-plek;bruise;NOUN;248
-kennen;(transitive) to know (a person, a thing), be acquainted with;VERB;249
-kennen;(auxiliary, colloquial, dialectal) synonym of kunnen;VERB;249
-stuk;piece, item (of a thing, kind, ware;NOUN;250
-stuk;play, skit;NOUN;250
-sterven;to die;VERB;251
-veilig;safe;ADJECTIVE;252
-veilig;safely;ADVERB;252
-mogelijk;possible;ADJECTIVE;253
-mogelijk;(zo ;ADJECTIVE;253
-mogelijk;possibly;ADVERB;253
-vriendin;(female) friend;NOUN;254
-vriendin;girlfriend (romantic);NOUN;254
-redden;(transitive) to save, rescue;VERB;255
-terwijl;while, during the same time that;CONJUNCTION;256
-terwijl;whereas;CONJUNCTION;256
-eerlijk;honest;ADJECTIVE;257
-eerlijk;fair, just;ADJECTIVE;257
-inderdaad;indeed;ADVERB;258
-liever;comparative degree of graag;ADVERB;259
-liever;rather, preferably;ADVERB;259
-overal;everywhere, anywhere;ADVERB;260
-duidelijk;clear, precise;ADJECTIVE;261
-duidelijk;obvious, clear;ADJECTIVE;261
-duidelijk;clearly;ADVERB;261
-belangrijk;important;ADJECTIVE;262
-hond;dog, canis lupus familiaris;NOUN;263
-hond;(obsolete) an old unit of area measuring ;NOUN;263
-waarschijnlijk;probably;ADVERB;264
-waarschijnlijk;probable, likely;ADJECTIVE;264
-geluk;luck, good luck;NOUN;265
-geluk;happiness;NOUN;265
-mond;mouth;NOUN;266
-mond;(obsolete) hand;NOUN;266
-fout;error;NOUN;267
-fout;mistake;NOUN;267
-fout;wrong;ADJECTIVE;267
-per;for each;PRESPOSITION;268
-per;by means of;PRESPOSITION;268
-mezelf;myself;PRONOUN;269
-betalen;(transitive) to pay;VERB;270
-welkom;welcome;ADJECTIVE;271
-welkom;welcome;INTERJECTION;271
-stil;quiet, silent;ADJECTIVE;272
-stil;style (manner of doing things, especially a fashionable one);NOUN;272
-prachtig;splendid, marvelous;ADJECTIVE;273
-kwaad;angry, furious;ADJECTIVE;274
-kwaad;bad, evil, crooked;ADJECTIVE;274
-kwaad;evil;NOUN;274
-kapitein;captain (person in command of a ship);NOUN;275
-kapitein;captain (military officer);NOUN;275
-telefoon;telephone;NOUN;276
-mam;mother;NOUN;277
-mam;irish;NOUN;277
-zetten;(transitive) to set, to put;VERB;278
-zetten;(transitive, printing) to typeset;VERB;278
-zetten;(transitive) to make ready, prepare;VERB;278
-dezelfde;the same (used to modify non-neuter nouns);DETERMINER;279
-trouwen;(ergative) to marry;VERB;280
-trouwen;(transitive, obsolete) to trust;VERB;280
-zeer;sore, painful;ADJECTIVE;281
-zeer;painful, grieving;ADJECTIVE;281
-zeer;hurtful;ADJECTIVE;281
-hoezo;in what way, in what respect;ADVERB;282
-hoezo;why;ADVERB;282
-hoezo;how so;INTERJECTION;282
-lichaam;body;NOUN;283
-lichaam;(law) legal body, organisation such as a corporation, association or assembly;NOUN;283
-lichaam;(algebra, netherlands) field;NOUN;283
-voorzichtig;careful;ADJECTIVE;284
-jack;portuguese;NOUN;285
-kwijt;lost, missing;ADJECTIVE;286
-nergens;nowhere;ADVERB;287
-mens;human, any member of the species homo sapiens;NOUN;288
-mens;person;NOUN;288
-elk;each;DETERMINER;289
-elk;(chiefly in expressions) everyone;PRONOUN;289
-noemen;(transitive) to call, to name;VERB;290
-noemen;(transitive) to mention;VERB;290
-noemen;(intransitive, proscribed, dialectal) to have as one's name;VERB;290
-vertrouwen;(intransitive, transitive) to trust ;VERB;291
-vertrouwen;(reflexive, obsolete) to marry;VERB;291
-vertrouwen;trust, faith;NOUN;291
-pakken;(transitive) to grab, to takepak mijn handtake my hand;VERB;292
-pakken;(transitive) to get, to fetch;VERB;292
-pakken;(transitive) to pack, to compact;VERB;292
-kerel;lad, fellow, bloke;NOUN;293
-kerel;(historical or archaic) a long overgarment;NOUN;293
-kerel;to do;VERB;293
-koning;king;NOUN;294
-koning;(chess) king;NOUN;294
-koning;yellow (having yellow as its colour);ADJECTIVE;294
-tijdens;during;PRESPOSITION;295
-nogal;rather, quite;ADVERB;296
-allebei;both;DETERMINER;297
-lieverd;a person who is kind or sweet;NOUN;298
-lieverd;dear, darling, honey;NOUN;298
-koffie;coffee;NOUN;299
-veranderen;(ergative) to change;VERB;300
-miljoen;a million, ;NOUN;301
-schieten;(intransitive) to shoot, fire;VERB;302
-schieten;(transitive) to shoot, to kill (especially game);VERB;302
-schieten;(intransitive) to rush, to move quickly;VERB;302
-gisteren;yesterday;ADVERB;303
-ver;far;ADJECTIVE;304
-zus;sister;NOUN;305
-zus;so, in such a way;ADVERB;305
-kopen;(transitive) to buy;VERB;306
-tweede;second, number two;ADJECTIVE;307
-ziek;sick, ill;ADJECTIVE;308
-ziek;(slang) excellent;ADJECTIVE;308
-ziek;(slang) very;ADVERB;308
-woord;word;NOUN;309
-grappig;funny;ADJECTIVE;310
-ontmoeten;to meet;VERB;311
-ontmoeten;to encounter, come across;VERB;311
-vechten;(intransitive) to fight;VERB;312
-plezier;fun, leisure;NOUN;313
-plezier;pleasure;NOUN;313
-vroeger;earlier;ADVERB;314
-kantoor;office;NOUN;315
-fantastisch;fantastic;ADJECTIVE;316
-zomaar;for no reason, out of the blue;ADVERB;317
-normaal;normal, usual, in accordance with what is common;ADJECTIVE;318
-normaal;(mathematics) normal, perpendicular;ADJECTIVE;318
-normaal;normally, usually;ADVERB;318
-nieuw;new;ADJECTIVE;319
-zichzelf;oneself;PRONOUN;320
-zichzelf;yourself (in combination with the polite pronoun u;PRONOUN;320
-t;&#;NOUN;321
-t;bread;NOUN;321
-foto;photo, photograph;NOUN;322
-pap;mush;NOUN;323
-pap;porridge;NOUN;323
-pap;(colloquial) pa, dad;NOUN;323
-voelen;(transitive) to feel, to have sensation of;VERB;324
-voelen;(reflexive, copulative) to feel, to experience a feeling;VERB;324
-idioot;(dated, potentially  offensive) someone with the mental age of a young child, an idiot;NOUN;325
-idioot;(obsolete) a layman;NOUN;325
-winnen;(transitive or intransitive) to win, to triumph, to be victorious (in);VERB;326
-winnen;(transitive) to acquire;VERB;326
-winnen;(transitive) to extract, to refine, to harvest (from base materials such as ore or crops);VERB;326
-eindelijk;at last, finally;ADVERB;327
-men;(indefinite, subject) one, you, they, everyone;PRONOUN;328
-schip;ship (a large, water borne vessel);NOUN;329
-schip;(architecture) nave (the middle or body of a standard medieval church or cathedral, extending from the transepts to the principal entrances);NOUN;329
-enkele;some;PRONOUN;330
-meid;girl, lass;NOUN;331
-meid;maid;NOUN;331
-meid;commonly used as an address for female pets, especially female dogs;NOUN;331
-lief;nice, sweet;ADJECTIVE;332
-lief;beloved;ADJECTIVE;332
-lief;one's beloved in a romantic relationship, i;NOUN;332
-waard;innkeeper, publican;NOUN;333
-waard;landlord, host;NOUN;333
-waard;(obsolete) the master of the household;NOUN;333
-enkel;single;ADJECTIVE;334
-enkel;only, sole;ADJECTIVE;334
-enkel;exclusively, only;ADVERB;334
-einde;end;NOUN;335
-vreselijk;terrible;ADJECTIVE;336
-vreselijk;terribly;ADVERB;336
-begrijpen;(transitive) to understand (concepts, ideas), to comprehend;VERB;337
-slim;intelligent, bright;ADJECTIVE;338
-slim;clever, smart;ADJECTIVE;338
-slim;(now dialectal, eastern dutch) wrong, incorrect, bad;ADJECTIVE;338
-trots;pride;NOUN;339
-trots;proud ;ADJECTIVE;339
-onzin;nonsense;NOUN;340
+het;it;PRONOUN;1
+het;it;PRONOUN;1
+dat;that (neuter);DETERMINER;2
+dat;(demonstrative) that, that there;PRONOUN;2
+niet;not, no: used to express negation;ADVERB;3
+niet;staple;NOUN;3
+een;(indefinite article) placed before a singular noun, indicating a general case of a person or thing: a, an;DETERMINER;4
+een;one;NOUN;4
+en;and;CONJUNCTION;5
+en;well, so;CONJUNCTION;5
+en;(mathematics) plus, and;CONJUNCTION;5
+wat;(interrogative) what: e;PRONOUN;6
+wat;(relative) what: e;PRONOUN;6
+wat;(relative) that: e;PRONOUN;6
+hij;third-person singular, masculine, subjective: he;PRONOUN;7
+zijn;(intransitive) to be, to exist;VERB;8
+zijn;(transitive, copulative) used to connect a noun to an adjective that describes it;VERB;8
+te;(modifying an infinitive verb) to;PRESPOSITION;9
+als;(subordinating) if, when;CONJUNCTION;10
+als;when, as soon as;CONJUNCTION;10
+als;like, as ;PRESPOSITION;10
+dit;this (neuter);DETERMINER;11
+dit;(demonstrative) this, this here;PRONOUN;11
+hier;here;ADVERB;12
+hier;(with a preposition) this;ADVERB;12
+dan;then, after that;ADVERB;13
+dan;then, in that case;ADVERB;13
+wel;the opposite of not (used to add positive emphasis to the verb, much like the auxiliaries "do" or "does" in affirmative sentences in english)  ik dacht dat je niet van golf hield;ADVERB;14
+wel;fairly;ADVERB;14
+nog;still, as before;ADVERB;15
+nog;(in negative phrases) yet;ADVERB;15
+nog;(with an amount) more, in addition;ADVERB;15
+geen;no, not a, not an, not any;DETERMINER;16
+geen;none;DETERMINER;16
+geen;(archaic) yonder, farde gene zijdethe far side;ADJECTIVE;16
+zo;so, thus, like that/this;ADVERB;17
+zo;so, that, to such an extent;ADVERB;17
+hem;(personal) third-person singular, masculine, objective: him;PRONOUN;18
+hem;(personal) the tagger in a game of tag: it;PRONOUN;18
+hebben;(transitive) to have, to possess, own, hold;VERB;19
+hebben;(transitive, medicine) to be afflicted with a disease;VERB;19
+ja;yes;ADVERB;20
+ja;yes;NOUN;20
+ja;yes;INTERJECTION;20
+hoe;how;ADVERB;21
+nee;no;ADVERB;22
+haar;(personal) third-person singular, feminine object pronoun: her;PRONOUN;23
+haar;third-person singular, feminine possessive adjective: her;DETERMINER;23
+ook;also, too, moreover;ADVERB;24
+ook;(in negative sentences) either;ADVERB;24
+doen;(transitive) to do;VERB;25
+doen;(transitive) to put;VERB;25
+doen;(auxiliary) to cause to, to make;VERB;25
+gaan;(intransitive) to go, to move from one place to another;VERB;26
+gaan;(intransitive) to leave or depart, to move away;VERB;26
+gaan;(intransitive) to lead (in a direction)  deze weg gaat helemaal naar limburg;VERB;26
+daar;there;ADVERB;27
+daar;(with a preposition) that;ADVERB;27
+al;yet;ADVERB;28
+of;(coordinating) or;CONJUNCTION;29
+of;(subordinating) whether, if;CONJUNCTION;29
+ons;metric ounce (;NOUN;30
+iets;something;PRONOUN;31
+iets;anything;PRONOUN;31
+iets;somewhat;ADVERB;31
+wie;(interrogative, subjective or objective) who, whom;PRONOUN;32
+wie;(relative, subjective or objective) who, whom;PRONOUN;32
+moeten;(intransitive) to be necessary, to be required;VERB;33
+moeten;(auxiliary) to have to, must;VERB;33
+moeten;(auxiliary) should, be meant to, be supposed to;VERB;33
+alles;(indefinite) everything;PRONOUN;34
+kunnen;(intransitive) to be possible;VERB;35
+kunnen;(auxiliary) can, to be able to;VERB;35
+kunnen;(auxiliary) may, can, to be allowed to;VERB;35
+toch;still, nevertheless, anyway;ADVERB;36
+toch;after all, despite what was expected;ADVERB;36
+toch;yes, surely;ADVERB;36
+echt;authentic, true, genuine, real;ADJECTIVE;37
+echt;really, truly;ADVERB;37
+echt;marriage, matrimony;NOUN;37
+zien;(transitive) to see;VERB;38
+weg;way, road;NOUN;39
+weg;away;ADVERB;39
+weg;gone, disappeared;ADVERB;39
+nou;now;ADVERB;40
+nou;come on;ADVERB;40
+nou;so, well;INTERJECTION;40
+alleen;alone, by oneself;ADJECTIVE;41
+alleen;lonely;ADJECTIVE;41
+alleen;only, exclusively;ADVERB;41
+nooit;never;ADVERB;42
+dus;thus, so, ergo;ADVERB;43
+man;husband, male spouse;NOUN;44
+even;shortly, briefly;ADVERB;45
+even;for a short period, for a while;ADVERB;45
+even;for a moment;ADVERB;45
+eens;once, one time;ADVERB;46
+eens;sometime, at an unspecified time;ADVERB;46
+eens;even;ADVERB;46
+terug;back, to a previous place or condition;ADVERB;47
+terug;back, in return;ADVERB;47
+misschien;perhaps, maybe;ADVERB;48
+laten;(copulative) to leave, to cause to remain in the same position or state;VERB;49
+laten;(auxiliary, with object) to leave, to allow to remain/continue to;VERB;49
+laten;(auxiliary, with object) to let, to allow to;VERB;49
+niets;nothing;PRONOUN;50
+iemand;someone;PRONOUN;51
+komen;(intransitive) to come;VERB;52
+komen;(intransitive) to happen, to arise, to come to be, to be caused;VERB;52
+toen;back then, at the time, in those days;ADVERB;53
+zeggen;(transitive) to say, tell;VERB;54
+worden;(copulative) to become;VERB;55
+leven;(intransitive) to live;VERB;56
+leven;life;NOUN;56
+nodig;necessary, needed;ADJECTIVE;57
+nodig;(only in attribute position) some amount or degree of, a certain level of, some;ADJECTIVE;57
+nodig;necessarily, badly, urgently;ADVERB;57
+gewoon;regular, ordinary, usual;ADJECTIVE;58
+gewoon;normal, common;ADJECTIVE;58
+gewoon;simply, just;ADVERB;58
+twee;two;NOUN;59
+twee;two;NOUN;59
+net;television channel;NOUN;60
+altijd;always;ADVERB;61
+maken;(transitive) to make;VERB;62
+maken;(transitive) to fix, to repair, to mend;VERB;62
+maken;(transitive) to take (a photo);VERB;62
+tijd;time;NOUN;63
+tijd;(grammar) tense;NOUN;63
+omdat;because;CONJUNCTION;64
+zeker;certain, sure;ADJECTIVE;65
+zeker;confident, secure;ADJECTIVE;65
+zeker;confirmed;ADJECTIVE;65
+dag;day (period of ;NOUN;66
+dag;daytime (time between sunrise and sunset);NOUN;66
+vrouw;woman;NOUN;67
+vrouw;wife;NOUN;67
+allemaal;all, everyone;PRONOUN;68
+vader;father;NOUN;69
+vader;forefather;NOUN;69
+anders;otherwise;ADVERB;70
+jaar;year;NOUN;71
+willen;to want, to desire;VERB;72
+erg;serious, considerable, severe;ADJECTIVE;73
+erg;awful, terrible;ADJECTIVE;73
+erg;very;ADVERB;73
+zitten;(intransitive) to sit;VERB;74
+zitten;(intransitive) to be, to be placed or located;VERB;74
+jouw;your;DETERMINER;75
+jouw;expression of scorn;INTERJECTION;75
+jouw;a jeer;NOUN;75
+zoals;as, just like, just as, the way that;CONJUNCTION;76
+niemand;nobody, no one;PRONOUN;77
+iedereen;everyone;PRONOUN;78
+zich;expresses an unintended result with many otherwise non-reflexive and ergative verbs;PRONOUN;79
+moeder;mother, female parent;NOUN;80
+moeder;(archaic) womb;NOUN;80
+praten;(intransitive) to talk;VERB;81
+mooi;beautiful, pretty, handsome;ADJECTIVE;82
+mooi;nice, good;ADJECTIVE;82
+genoeg;enough;DETERMINER;83
+genoeg;plenty;DETERMINER;83
+genoeg;enough, to enough of a degree, with sufficient frequency;ADVERB;83
+vinden;(transitive) to find (after searching)  gevonden;VERB;84
+vinden;(transitive) to find, to come across;VERB;84
+vinden;(transitive, copulative) to find, to think, to feel, to be of opinion;VERB;84
+lang;long;ADJECTIVE;85
+lang;tall;ADJECTIVE;85
+lang;long (time), lengthy, a long time;ADJECTIVE;85
+leuk;likable;ADJECTIVE;86
+leuk;funny, jolly;ADJECTIVE;86
+leuk;nice, pleasant, enjoyable;ADJECTIVE;86
+graag;please (when being offered something);INTERJECTION;87
+helpen;(transitive) to help;VERB;88
+helpen;(transitive) to provide, to supply ;VERB;88
+helpen;(transitive) to get hooked, to cause (someone) to be very keen (on), addicted or depended ;VERB;88
+elkaar;each other, one another;PRONOUN;89
+natuurlijk;naturally;ADVERB;90
+natuurlijk;of course;ADVERB;90
+natuurlijk;natural;ADJECTIVE;90
+hallo;hello (a general greeting used when meeting somebody) ;INTERJECTION;91
+helemaal;completely;ADVERB;92
+helemaal;(colloquial) anyway;ADVERB;92
+gek;crazy, mad;ADJECTIVE;93
+gek;ludicrous, farcical;ADJECTIVE;93
+gek;silly, playful;ADJECTIVE;93
+alle;all (every individual of the given class);ADVERB;94
+drie;three;NOUN;95
+meneer;sir, mister;NOUN;96
+blijven;(intransitive) to stay, to remain;VERB;97
+blijven;(copulative) to stay, to remain, to still be;VERB;97
+blijven;(auxiliary) to keep/keep on, to continue to;VERB;97
+zonder;without;PRESPOSITION;98
+dingen;(transitive) to solicit;VERB;99
+houden;(transitive, of animals) to keep, to care for;VERB;100
+alsjeblieft;please;ADVERB;101
+alsjeblieft;here you are;ADVERB;101
+krijgen;(transitive) to get, to receive, to come into possession of (anything ranging from concrete to abstract inputs such as news, gift, punishment, et cetera)  ze heeft van haar familie een huwelijkskado gekregen;VERB;102
+krijgen;(copulative) to get, to (manage to) cause to become;VERB;102
+kijken;(intransitive) to look ;VERB;103
+kijken;(transitive) to watch (e;VERB;103
+vriend;(male) friend;NOUN;104
+vriend;boyfriend (romantic partner);NOUN;104
+idee;idea;NOUN;105
+idee;&#;NOUN;105
+bang;scared, frightened;ADJECTIVE;106
+bang;fearful;ADJECTIVE;106
+bang;anxious;ADJECTIVE;106
+steeds;always, continually, all the time, every time, each time;ADVERB;107
+geven;(transitive) to give;VERB;108
+eerste;first;ADJECTIVE;109
+naam;name;NOUN;110
+naam;name;PRONOUN;110
+vertellen;(transitive) to tell;VERB;111
+wanneer;when;ADVERB;112
+wanneer;when;CONJUNCTION;112
+wanneer;whenever;CONJUNCTION;112
+ie;(obsolete) always, every time, continuously;ADVERB;113
+beetje;a bit, a little bit, somewhat;ADVERB;114
+beetje;a bit of, a little bit of, some (before mass nouns);DETERMINER;114
+eten;(transitive, intransitive) to eat;VERB;115
+eten;food;NOUN;115
+eten;dinner;NOUN;115
+vragen;(transitive) to ask a question;VERB;116
+vragen;(transitive) to demand, exact;VERB;116
+vragen;(transitive) to require, need;VERB;116
+zelf;(intensifier) oneself, referring to the subject of a sentence: myself, yourself, itself, ourselves, themselves etc;ADVERB;117
+zelf;oneself, by oneself, alone;ADVERB;117
+zelf;self;NOUN;117
+jongen;a boy, any male child;NOUN;118
+o;letter;INTERJECTION;119
+o;upper case;INTERJECTION;119
+morgen;tomorrow;ADVERB;120
+morgen;morning;NOUN;120
+staan;(intransitive) to stand, to be upright;VERB;121
+staan;(intransitive) to be, to be placed or located;VERB;121
+zorgen;(intransitive) to make sure, to ensure;VERB;122
+want;for, because;CONJUNCTION;123
+want;mitten;NOUN;123
+want;shroud, sideways support for a mast;NOUN;123
+thuis;one's home;NOUN;124
+heen;away;ADVERB;125
+heen;(postpositional) to, towards;ADVERB;125
+heen;(slang) gone, outside the boundaries of the norms;ADVERB;125
+geweldig;tremendous, great;ADJECTIVE;126
+geweldig;awesome, wonderful;ADJECTIVE;126
+wereld;world;NOUN;127
+nemen;(transitive) to take, to take hold of, to grasp or grab;VERB;128
+nemen;(transitive) to take, to choose out of some options, to pick;VERB;128
+nemen;(transitive) to take, to use a particular route or type of transport;VERB;128
+jongens;boy;INTERJECTION;129
+meisje;girlfriend;NOUN;130
+denken;(intransitive) to think ;VERB;131
+enige;(masculine, feminine, with de) only one;PRONOUN;132
+enige;(neuter, with het) only thing;PRONOUN;132
+samen;together;ADVERB;133
+vandaag;today;ADVERB;134
+halen;(transitive) to fetch, to get;VERB;135
+halen;(transitive) to reach (a goal), to catch;VERB;135
+eerst;first, at first, before something else;ADVERB;136
+eerst;at first, before, earlier;ADVERB;136
+eerst;only, not until;ADVERB;136
+eigen;own;ADJECTIVE;137
+eigen;self;ADJECTIVE;137
+rustig;calm, tranquil, quiet;ADJECTIVE;138
+rustig;taking one's time, not hurried;ADJECTIVE;138
+horen;(transitive) to hear;VERB;139
+horen;(intransitive) to belong;VERB;139
+horen;(auxiliary, with te) to be supposed to, to be meant to;VERB;139
+soms;sometimes;ADVERB;140
+soms;(in questions) maybe, perhaps;ADVERB;140
+uur;an hour, a period of time;NOUN;141
+uur;the hour, the time of day;NOUN;141
+uur;o'clock;NOUN;141
+zoon;son;NOUN;142
+politie;police;NOUN;143
+politie;(obsolete) policy, governance;NOUN;143
+probleem;problem;NOUN;144
+bijna;almost;ADVERB;145
+bijna;soon;ADVERB;145
+kind;child, kid, non-adult human;NOUN;146
+kind;descendant, still a minor or irrespective of age;NOUN;146
+kind;(figuratively) product of influence, breeding etc;NOUN;146
+hen;them (object pronoun);PRONOUN;147
+hen;a female of the species of birds brooding on the ground;NOUN;147
+precies;exact, precise;ADJECTIVE;148
+precies;accurate, careful;ADJECTIVE;148
+precies;exactly, precisely;ADVERB;148
+wachten;(intransitive) to wait ;VERB;149
+verder;further;ADVERB;150
+verder;furthermore, on top of that, otherwise, for the rest;ADVERB;150
+alsof;as if;CONJUNCTION;151
+kant;way, direction;NOUN;152
+eigenlijk;actual;ADJECTIVE;153
+eigenlijk;actually, really, in reality;ADVERB;153
+volgens;according to;PRESPOSITION;154
+werken;(intransitive) to work, labour;VERB;155
+werken;(intransitive) to work, to be effective;VERB;155
+werken;(intransitive) to function, be in working order;VERB;155
+best;fine, okay;ADJECTIVE;156
+best;quite, rather;ADVERB;156
+familie;relatives (extended kin);NOUN;157
+familie;family (close kin)  synonym: gezin;NOUN;157
+familie;(taxonomy) family;NOUN;157
+dagen;(intransitive) to dawn;VERB;158
+dagen;(transitive) to light, illuminate, color by lighting;VERB;158
+dagen;(intransitive) to rise;VERB;158
+hoeveel;how much, how many;DETERMINER;159
+vijf;five;NOUN;160
+spreken;(transitive or intransitive) to speak;VERB;161
+blij;happy;ADJECTIVE;162
+blij;glad;ADJECTIVE;162
+blij;(archaic) lead (metal);NOUN;162
+prima;excellent, fine;ADJECTIVE;163
+lekker;having a nice taste, tasty, delectable;ADJECTIVE;164
+lekker;good, nice, pleasant in a more generic sense;ADJECTIVE;164
+lekker;(attributive, colloquial) hot, sexy, physically attractive;ADJECTIVE;164
+kamer;a room, a chamber;NOUN;165
+kamer;a chamber of a gun;NOUN;165
+kamer;a chamber of parliament (legislative body);NOUN;165
+hoofd;head;NOUN;166
+hoofd;head (of an organisation), chief, boss;NOUN;166
+hoofd;a breakwater, jetty or pier at the entrance of a sea harbour;NOUN;166
+zoeken;(intransitive) to search ;VERB;167
+zoeken;(transitive) to look for, to seek;VERB;167
+stad;city, town;NOUN;168
+stad;the town/city centre;NOUN;168
+geloven;(intransitive) to believe, to hold a belief ;VERB;169
+geloven;(transitive) to believe, to be convinced by;VERB;169
+pijn;physical pain, ache;NOUN;170
+pijn;psychological pain, hurt;NOUN;170
+pijn;(rare) pine (tree);NOUN;170
+jezelf;yourself;PRONOUN;171
+kans;chance;NOUN;172
+kans;opportunity;NOUN;172
+kans;(mathematics) probability;NOUN;172
+ogen;(copulative) to look, to appear;VERB;173
+ogen;(intransitive, obsolete) to look intensely;VERB;173
+ogen;(transitive, obsolete) to see, to view, to eye;VERB;173
+manier;way, manner;NOUN;174
+ergens;somewhere, anywhere;ADVERB;175
+ergens;somehow, in some unspecified way;ADVERB;175
+mooie;manx;ADJECTIVE;176
+mooie;out, outside;ADVERB;176
+brengen;(transitive) to bring, to carry;VERB;177
+brengen;(transitive) to deliver, to supply;VERB;177
+spelen;(intransitive) to play;VERB;178
+spelen;(transitive or intransitive) to play (a musical instrument);VERB;178
+deur;door;NOUN;179
+broer;brother (male sibling)  synonym: broeder;NOUN;180
+dokter;doctor (physician, medical doctor);NOUN;181
+dokter;doctor, a physician;NOUN;181
+bed;layer, often a substratum;NOUN;182
+hulp;help, assistance, rescue;NOUN;183
+zaak;shop, small store, business;NOUN;184
+zaak;(law) case, suit;NOUN;184
+zaak;general term with which one indicates a thing or a concept that is not a person or creature: thing;NOUN;184
+groot;big, large, great;ADJECTIVE;185
+groot;great, important, eminent, heroic;ADJECTIVE;185
+groot;tall;ADJECTIVE;185
+juist;right, correct;ADJECTIVE;186
+juist;just;ADJECTIVE;186
+juist;just, at that moment;ADVERB;186
+zoveel;so many, so much;DETERMINER;187
+zoveel;that many, that much;DETERMINER;187
+later;having to do with or occurring in the future;ADJECTIVE;188
+vergeten;to forget (fail to do)  ik vergat de deur op slot te doen;VERB;189
+vooruit;ahead, onward;ADVERB;190
+vooruit;come on, go on (used to drive someone forward);INTERJECTION;190
+vooruit;fine, oh all right then (said when grudgingly accepting a suggestion for a certain action);INTERJECTION;190
+bellen;(intransitive) to ring, like using a bell;VERB;191
+bellen;(transitive) to call, by bell (originally) or (now mostly) telephone;VERB;191
+bellen;(regional, southern) (intransitive) to bark, like a canine;VERB;191
+proberen;to try, to attempt;VERB;192
+papa;dad (term of address for one’s father, especially used by young children);NOUN;193
+soort;sort, kind;NOUN;194
+soort;(biology, taxonomy) species;NOUN;194
+lopen;(intransitive, chiefly belgium) to run, go fast on one's own legs;VERB;195
+lopen;(intransitive, chiefly belgium) to run, cover distance, follow a track etc;VERB;195
+lopen;(intransitive, chiefly netherlands) to walk, go somewhere regardless of speed;VERB;195
+dochter;daughter (female offspring);NOUN;196
+dochter;(figuratively) offshoot, something derivative or subordinate;NOUN;196
+meteen;immediately;ADVERB;197
+doden;(transitive) to kill;VERB;198
+beginnen;(ergative) to begin;VERB;199
+gebruiken;(transitive) to use;VERB;200
+gebruiken;(transitive) to consume, to eat or drink (food or drink)  synonyms: consumeren, nuttigen;VERB;200
+gebruiken;(transitive) to consume (resources or goods)  synonyms: consumeren, verbruiken;VERB;200
+mevrouw;madam, miss;NOUN;201
+leren;(transitive) to learn;VERB;202
+leren;(transitive) to teach;VERB;202
+klootzak;(dated, literally) a ball sack;NOUN;203
+klootzak;(vulgar) a common term of abuse for a man, similar to bastard, asshole;NOUN;203
+slapen;to sleep;VERB;204
+zoiets;something like that, such a thing;PRONOUN;205
+zoiets;(with a partitive adjective) such a ;PRONOUN;205
+zoiets;something like that, something similar, the like;PRONOUN;205
+liefde;love;NOUN;206
+moeilijk;hard, difficult;ADJECTIVE;207
+tien;ten;NOUN;208
+voorbij;over (finished);ADVERB;209
+gelukkig;happy;ADJECTIVE;210
+gelukkig;pleased, satisfied;ADJECTIVE;210
+gelukkig;lucky;ADJECTIVE;210
+nacht;night;NOUN;211
+nummer;number used as a means of identification;NOUN;212
+nummer;number (used to show the rank of something in a list or sequence);NOUN;212
+zodat;such that (indicating result or consequence);CONJUNCTION;213
+zodat;in order that, so that (indicating goal or intent)  synonym: opdat;CONJUNCTION;213
+wakker;awake;ADJECTIVE;214
+mogen;(intransitive) to be allowed;VERB;215
+mogen;(auxiliary) may, can, be allowed to;VERB;215
+mogen;(intransitive) may go, can go, to be allowed to go;VERB;215
+zes;six;NOUN;216
+gebeuren;(intransitive) to happen;VERB;217
+gebeuren;something which is happening or which happened;NOUN;217
+sinds;since;PRESPOSITION;218
+fijn;nice, pleasant;ADJECTIVE;219
+fijn;fine, thin;ADJECTIVE;219
+fijn;delicate, meticulous;ADJECTIVE;219
+voordat;(subordinating) before;CONJUNCTION;220
+bezig;busy, occupied;ADJECTIVE;221
+hart;heart, main muscle pumping blood through the body:;NOUN;222
+hart;the center point or zone of an object, image etc;NOUN;222
+hart;the core or essence of some thing, reasoning etc;NOUN;222
+klein;small, little;ADJECTIVE;223
+klein;almost;ADJECTIVE;223
+vermoorden;(transitive) to murder;VERB;224
+liggen;(intransitive) to lie;VERB;225
+liggen;(intransitive, often of place names) to be, to be placed or located;VERB;225
+stoppen;to stop, to halt;VERB;226
+stoppen;to plug;VERB;226
+stoppen;to stuff, to put, to insert;VERB;226
+straks;later today, shortly, in a moment;ADVERB;227
+straks;(  suriname, elsewhere  dialectal) immediately, right now;ADVERB;227
+hetzelfde;the same (used to modify neuter nouns);DETERMINER;228
+drinken;(transitive) to drink;VERB;229
+drinken;drink, beverage;NOUN;229
+aardig;friendly, nice;ADJECTIVE;230
+aardig;nice;ADJECTIVE;230
+aardig;considerable, substantial;ADJECTIVE;230
+eerder;previous, prior;ADJECTIVE;231
+eerder;earlier;ADVERB;231
+ander;other;ADJECTIVE;232
+ander;different;ADJECTIVE;232
+ander;(archaic) second;ADJECTIVE;232
+waarheid;truth;NOUN;233
+neer;down, downwards;ADVERB;234
+beneden;below;ADVERB;235
+beneden;downstairs;ADVERB;235
+agent;a police officer;NOUN;236
+zaken;business;NOUN;237
+gezicht;seeing, the ability to observe visually, vision, sight;NOUN;238
+gezicht;face, front-side of a head;NOUN;238
+gezicht;sight, visual impression, view, vision;NOUN;238
+oud;old;ADJECTIVE;239
+oud;alternative spelling of ud;NOUN;239
+vallen;(intransitive) to fall, to tumble;VERB;240
+vallen;(intransitive) to fall, to begin (of a time period)  de avond valt;VERB;240
+vallen;(auxiliary, with te) to be able to be;VERB;240
+avond;evening, night;NOUN;241
+vaak;often;ADVERB;242
+vaak;frequent, regular;ADJECTIVE;242
+vaak;sleepiness;NOUN;242
+oorlog;war;NOUN;243
+nieuws;news;NOUN;244
+hoi;(dated) an exclamation of joy;INTERJECTION;245
+hoi;water;NOUN;245
+schuld;(finance, accounting) debt, account payable;NOUN;246
+plek;spot, place;NOUN;247
+plek;bruise;NOUN;247
+kennen;(transitive) to know (a person, a thing), be acquainted with;VERB;248
+kennen;(auxiliary, colloquial, dialectal) synonym of kunnen;VERB;248
+stuk;piece, item (of a thing, kind, ware;NOUN;249
+stuk;play, skit;NOUN;249
+sterven;to die;VERB;250
+veilig;safe;ADJECTIVE;251
+veilig;safely;ADVERB;251
+mogelijk;possible;ADJECTIVE;252
+mogelijk;(zo ;ADJECTIVE;252
+mogelijk;possibly;ADVERB;252
+vriendin;(female) friend;NOUN;253
+vriendin;girlfriend (romantic);NOUN;253
+redden;(transitive) to save, rescue;VERB;254
+terwijl;while, during the same time that;CONJUNCTION;255
+terwijl;whereas;CONJUNCTION;255
+eerlijk;honest;ADJECTIVE;256
+eerlijk;fair, just;ADJECTIVE;256
+inderdaad;indeed;ADVERB;257
+liever;comparative degree of graag;ADVERB;258
+liever;rather, preferably;ADVERB;258
+overal;everywhere, anywhere;ADVERB;259
+duidelijk;clear, precise;ADJECTIVE;260
+duidelijk;obvious, clear;ADJECTIVE;260
+duidelijk;clearly;ADVERB;260
+belangrijk;important;ADJECTIVE;261
+hond;dog, canis lupus familiaris;NOUN;262
+hond;(obsolete) an old unit of area measuring ;NOUN;262
+waarschijnlijk;probably;ADVERB;263
+waarschijnlijk;probable, likely;ADJECTIVE;263
+geluk;luck, good luck;NOUN;264
+geluk;happiness;NOUN;264
+mond;mouth;NOUN;265
+mond;(obsolete) hand;NOUN;265
+fout;error;NOUN;266
+fout;mistake;NOUN;266
+fout;wrong;ADJECTIVE;266
+per;for each;PRESPOSITION;267
+per;by means of;PRESPOSITION;267
+mezelf;myself;PRONOUN;268
+betalen;(transitive) to pay;VERB;269
+welkom;welcome;ADJECTIVE;270
+welkom;welcome;INTERJECTION;270
+stil;quiet, silent;ADJECTIVE;271
+stil;style (manner of doing things, especially a fashionable one);NOUN;271
+prachtig;splendid, marvelous;ADJECTIVE;272
+kwaad;angry, furious;ADJECTIVE;273
+kwaad;bad, evil, crooked;ADJECTIVE;273
+kwaad;evil;NOUN;273
+kapitein;captain (person in command of a ship);NOUN;274
+kapitein;captain (military officer);NOUN;274
+telefoon;telephone;NOUN;275
+mam;mother;NOUN;276
+mam;irish;NOUN;276
+zetten;(transitive) to set, to put;VERB;277
+zetten;(transitive, printing) to typeset;VERB;277
+zetten;(transitive) to make ready, prepare;VERB;277
+dezelfde;the same (used to modify non-neuter nouns);DETERMINER;278
+trouwen;(ergative) to marry;VERB;279
+trouwen;(transitive, obsolete) to trust;VERB;279
+zeer;sore, painful;ADJECTIVE;280
+zeer;painful, grieving;ADJECTIVE;280
+zeer;hurtful;ADJECTIVE;280
+hoezo;in what way, in what respect;ADVERB;281
+hoezo;why;ADVERB;281
+hoezo;how so;INTERJECTION;281
+lichaam;body;NOUN;282
+lichaam;(law) legal body, organisation such as a corporation, association or assembly;NOUN;282
+lichaam;(algebra, netherlands) field;NOUN;282
+voorzichtig;careful;ADJECTIVE;283
+jack;portuguese;NOUN;284
+kwijt;lost, missing;ADJECTIVE;285
+nergens;nowhere;ADVERB;286
+mens;human, any member of the species homo sapiens;NOUN;287
+mens;person;NOUN;287
+elk;each;DETERMINER;288
+elk;(chiefly in expressions) everyone;PRONOUN;288
+noemen;(transitive) to call, to name;VERB;289
+noemen;(transitive) to mention;VERB;289
+noemen;(intransitive, proscribed, dialectal) to have as one's name;VERB;289
+vertrouwen;(intransitive, transitive) to trust ;VERB;290
+vertrouwen;(reflexive, obsolete) to marry;VERB;290
+vertrouwen;trust, faith;NOUN;290
+pakken;(transitive) to grab, to takepak mijn handtake my hand;VERB;291
+pakken;(transitive) to get, to fetch;VERB;291
+pakken;(transitive) to pack, to compact;VERB;291
+kerel;lad, fellow, bloke;NOUN;292
+kerel;(historical or archaic) a long overgarment;NOUN;292
+kerel;to do;VERB;292
+koning;king;NOUN;293
+koning;(chess) king;NOUN;293
+koning;yellow (having yellow as its colour);ADJECTIVE;293
+tijdens;during;PRESPOSITION;294
+nogal;rather, quite;ADVERB;295
+allebei;both;DETERMINER;296
+lieverd;a person who is kind or sweet;NOUN;297
+lieverd;dear, darling, honey;NOUN;297
+koffie;coffee;NOUN;298
+veranderen;(ergative) to change;VERB;299
+miljoen;a million, ;NOUN;300
+schieten;(intransitive) to shoot, fire;VERB;301
+schieten;(transitive) to shoot, to kill (especially game);VERB;301
+schieten;(intransitive) to rush, to move quickly;VERB;301
+gisteren;yesterday;ADVERB;302
+ver;far;ADJECTIVE;303
+zus;sister;NOUN;304
+zus;so, in such a way;ADVERB;304
+kopen;(transitive) to buy;VERB;305
+tweede;second, number two;ADJECTIVE;306
+ziek;sick, ill;ADJECTIVE;307
+ziek;(slang) excellent;ADJECTIVE;307
+ziek;(slang) very;ADVERB;307
+woord;word;NOUN;308
+grappig;funny;ADJECTIVE;309
+ontmoeten;to meet;VERB;310
+ontmoeten;to encounter, come across;VERB;310
+vechten;(intransitive) to fight;VERB;311
+plezier;fun, leisure;NOUN;312
+plezier;pleasure;NOUN;312
+vroeger;earlier;ADVERB;313
+kantoor;office;NOUN;314
+fantastisch;fantastic;ADJECTIVE;315
+zomaar;for no reason, out of the blue;ADVERB;316
+normaal;normal, usual, in accordance with what is common;ADJECTIVE;317
+normaal;(mathematics) normal, perpendicular;ADJECTIVE;317
+normaal;normally, usually;ADVERB;317
+nieuw;new;ADJECTIVE;318
+zichzelf;oneself;PRONOUN;319
+zichzelf;yourself (in combination with the polite pronoun u;PRONOUN;319
+t;&#;NOUN;320
+t;bread;NOUN;320
+foto;photo, photograph;NOUN;321
+pap;mush;NOUN;322
+pap;porridge;NOUN;322
+pap;(colloquial) pa, dad;NOUN;322
+voelen;(transitive) to feel, to have sensation of;VERB;323
+voelen;(reflexive, copulative) to feel, to experience a feeling;VERB;323
+idioot;(dated, potentially  offensive) someone with the mental age of a young child, an idiot;NOUN;324
+idioot;(obsolete) a layman;NOUN;324
+winnen;(transitive or intransitive) to win, to triumph, to be victorious (in);VERB;325
+winnen;(transitive) to acquire;VERB;325
+winnen;(transitive) to extract, to refine, to harvest (from base materials such as ore or crops);VERB;325
+eindelijk;at last, finally;ADVERB;326
+men;(indefinite, subject) one, you, they, everyone;PRONOUN;327
+schip;ship (a large, water borne vessel);NOUN;328
+schip;(architecture) nave (the middle or body of a standard medieval church or cathedral, extending from the transepts to the principal entrances);NOUN;328
+enkele;some;PRONOUN;329
+meid;girl, lass;NOUN;330
+meid;maid;NOUN;330
+meid;commonly used as an address for female pets, especially female dogs;NOUN;330
+lief;nice, sweet;ADJECTIVE;331
+lief;beloved;ADJECTIVE;331
+lief;one's beloved in a romantic relationship, i;NOUN;331
+waard;innkeeper, publican;NOUN;332
+waard;landlord, host;NOUN;332
+waard;(obsolete) the master of the household;NOUN;332
+enkel;single;ADJECTIVE;333
+enkel;only, sole;ADJECTIVE;333
+enkel;exclusively, only;ADVERB;333
+vreselijk;terrible;ADJECTIVE;334
+vreselijk;terribly;ADVERB;334
+begrijpen;(transitive) to understand (concepts, ideas), to comprehend;VERB;335
+slim;intelligent, bright;ADJECTIVE;336
+slim;clever, smart;ADJECTIVE;336
+slim;(now dialectal, eastern dutch) wrong, incorrect, bad;ADJECTIVE;336
+trots;pride;NOUN;337
+trots;proud ;ADJECTIVE;337
+onzin;nonsense;NOUN;338
+weinig;little, few, not much, not many;DETERMINER;339
+weinig;little, not much, not a lot;PRONOUN;339
+weinig;little, not much;ADVERB;339
+einde;end;NOUN;340
 gang;passageway, alley;NOUN;341
 gang;gait, walk (person's manner of walking or stepping);NOUN;341
 gang;journey;NOUN;341
-weinig;little, few, not much, not many;DETERMINER;342
-weinig;little, not much, not a lot;PRONOUN;342
-weinig;little, not much;ADVERB;342
-ziekenhuis;a hospital, medical care facility;NOUN;343
-ziekenhuis;(by extension) an infirmary;NOUN;343
-oom;uncle;NOUN;344
-leger;army, armed forces;NOUN;345
-leger;(archaic) bed, crib;NOUN;345
-lezen;(transitive) to read;VERB;346
-lezen;(transitive, archaic) to gather (esp;VERB;346
-wonen;(intransitive) to live (in a certain place);VERB;347
-muziek;music;NOUN;348
-verliefd;in love;ADJECTIVE;349
-omhoog;upwards;ADVERB;350
-omhoog;on high;ADVERB;350
+ziekenhuis;a hospital, medical care facility;NOUN;342
+ziekenhuis;(by extension) an infirmary;NOUN;342
+oom;uncle;NOUN;343
+leger;army, armed forces;NOUN;344
+leger;(archaic) bed, crib;NOUN;344
+lezen;(transitive) to read;VERB;345
+lezen;(transitive, archaic) to gather (esp;VERB;345
+wonen;(intransitive) to live (in a certain place);VERB;346
+verliefd;in love;ADJECTIVE;347
+omhoog;upwards;ADVERB;348
+omhoog;on high;ADVERB;348
+ik;i (first-person singular personal pronoun);PRONOUN;349
+muziek;music;NOUN;350
 stellen;(transitive) to position;VERB;351
 stellen;(transitive) to state, to put forward (a question or problem);VERB;351
 stellen;(reflexive) to take one's stand;VERB;351

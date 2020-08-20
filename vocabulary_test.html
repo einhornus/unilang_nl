@@ -8,6 +8,9 @@
 
 
 
+
+
+
 <p id ="info"></p>
 
 
@@ -39,7 +42,6 @@
 <p id ="content"></p>
 
 
-
 <script >
 
     let dict = null
@@ -53,6 +55,22 @@
     let mode = false
     let buttons = []
     let diff = 1
+    let max_words = 1000000
+
+    //document.getElementById("all").style.visibility = 'hidden';
+
+    //alert("smth")
+    readTextFile("dictionary_simple.txt")
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    mww = urlParams.get('n')
+
+    if(mww != null){
+        max_words = mww
+    }
+
+    console.log("MW", max_words)
 
     function init(){
         buttons.push(document.getElementById("b0"));
@@ -133,11 +151,13 @@
     }
 
     function getQuestion(index){
-        size = Math.floor(vocab.length/nmax/diff)
-        minIndex = index*size
-        maxIndex = Math.min((index+1)*size, vocab.length - 1)
+        size = Math.floor(Math.min(vocab.length, max_words)/nmax/diff)
 
-        console.log(minIndex, maxIndex)
+        console.log("SZ", size);
+
+        minIndex = (index-1)*size
+        maxIndex = Math.min(index*size, vocab.length - 1)
+        console.log(minIndex, maxIndex);
 
         numberIndex = randomInt(minIndex, maxIndex)
         definitionIndex = randomInt(0, vocab[numberIndex].length)
@@ -430,22 +450,6 @@
             }
         }
         rawFile.send(null);
-    }
-
-    //alert("smth")
-    readTextFile("dictionary_simple.txt")
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    nmax = urlParams.get('n')
-    diff = urlParams.get('diff')
-
-    if(nmax == null){
-        nmax = 20
-    }
-
-    if(diff == null){
-        diff = 1
     }
 
 </script>

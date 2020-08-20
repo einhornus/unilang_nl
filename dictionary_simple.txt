@@ -1,5 +1,3 @@
-ik;ik;ik
-je;je;je
 het;het;het
 de;de;de
 dat;dat;dat
@@ -1538,7 +1536,6 @@ waard;waard;waard
 enkel;enkel;enkel
 beloof;beloof;beloven
 woorden;woorden;woorden
-einde;einde;einde
 slaap;slaap;slapen
 jawel;jawel;jawel
 hierheen;hierheen;heen
@@ -1556,9 +1553,11 @@ slim;slim;slim
 trots;trots;trots
 onzin;onzin;onzin
 acht;acht;achten
-gang;gang;gang
 weinig;weinig;weinig
 spullen;spullen;spullen
+je;je;je
+einde;einde;einde
+gang;gang;gang
 gekregen;gekregen;krijgen
 grond;grond;gronden
 ziekenhuis;ziekenhuis;ziekenhuis
@@ -1589,9 +1588,10 @@ woont;woont;wonen
 woonden;woonden;wonen
 wone;wone;wonen
 wonend;wonend;wonen
-muziek;muziek;muziek
 verliefd;verliefd;verliefd
 omhoog;omhoog;omhoog
+ik;ik;ik
+muziek;muziek;muziek
 begon;begon;beginnen
 stellen;stellen;stellen
 stelde;stelde;stellen
