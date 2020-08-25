@@ -2,35 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Linkify</title>
+    <title>Unilang Dutch</title>
 </head>
 <body>
 
 
-<textarea type="text" id="text" cols="100" rows="10" value=""></textarea>
-<br>
-<input type="button" onclick="f()" value="Linkify">
-
-<p id ="p"></p>
-
-
-
-<p id ="content"></p>
+<div align="left">
+    <textarea type="text" id="text" cols="100" rows="10" value=""></textarea>
+    <br>
+    <input type="button" onclick="f()" value="Linkify">
+</div>
 
 
+<p id="p"></p>
 
-<script >
+
+<p id="content"></p>
+
+
+<script>
+    let vocab = null
 
     let dict = null
     let history = []
     let poses = []
     let nietpushen = false
 
-    function handleback(){
-        if(history.length <= 1){
+    /*
+    function sr2(){
+        var inputVal = document.getElementById("sf").value;
+        if(vocab == null){
+            readTextFile3("vocab.txt")
+        }
+        let txt = ""
+        cnt = 0
+        max = 1000
 
+        ress = []
+
+
+
+        for(let i = 0; i<vocab.length; i++){
+            if(cnt >= max){
+                break
+            }
+
+            points = 1.0/(i+1.0)
+
+
+            for(let j = 0; j<vocab[i].length; j++){
+                //console.log(vocab[i][j], inputVal)
+
+
+
+                if(vocab[i][j][1] != undefined) {
+                    if (vocab[i][j][1].indexOf(inputVal+" ") != -1 || vocab[i][j][1].indexOf(" "+inputVal) != -1 || vocab[i][j][1] === inputVal) {
+                        txt += vocab[i][j][0] +' - ' + vocab[i][j][1] + "\n"
+                        cnt += 1
+                        break;
+                    }
+                }
+            }
+        }
+        var p = document.getElementById("p")
+        txt = handleText(txt);
+        if(txt !== "") {
+            p.innerHTML = txt
         }
         else{
+            p.innerHTML = "Nothing found"
+        }
+    }
+
+     */
+
+    function handleback() {
+        if (history.length <= 1) {
+
+        } else {
             history.pop()
 
             nietpushen = true
@@ -38,10 +87,9 @@
             document.documentElement.scrollTop = poses[history.length - 1]
         }
 
-        if(poses <= 1){
+        if (poses <= 1) {
 
-        }
-        else{
+        } else {
             document.documentElement.scrollTop = poses[poses.length - 1]
             console.log("active", poses)
             poses.pop()
@@ -56,25 +104,22 @@
 
         if (e.keyCode == '38') {
             // up arrow
-        }
-        else if (e.keyCode == '40') {
+        } else if (e.keyCode == '40') {
             // down arrow
-        }
-        else if (e.keyCode == '37') {
+        } else if (e.keyCode == '37') {
             handleback()
-        }
-        else if (e.keyCode == '39') {
+        } else if (e.keyCode == '39') {
             // right arrow
         }
     }
 
-    function hndwrd(wrd){
+    function hndwrd(wrd) {
         //console.log(document.documentElement.scrollTop)
 
-        if(!nietpushen) {
+        if (!nietpushen) {
             history.push(wrd)
 
-            if(history.length>1) {
+            if (history.length > 1) {
                 poses.push(document.documentElement.scrollTop)
             }
         }
@@ -84,7 +129,7 @@
         p.innerHTML = handleText(inputVal);
         */
 
-        cont = readTextFile2(wrd+".html")
+        cont = readTextFile2(wrd + ".html")
         var content = document.getElementById("content")
         content.innerHTML = cont;
         //window.open(wrd+".html", '_blank');
@@ -94,17 +139,13 @@
         console.log(history, poses)
     }
 
-    function readTextFile2(file)
-    {
+    function readTextFile2(file) {
         res = ""
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status == 0) {
                     var allText = rawFile.responseText;
 
                     let lines = allText.split(/\r?\n/);
@@ -112,7 +153,7 @@
 
                     for (let i = 0; i < lines.length; i++) {
                         let line = lines[i].split(";");
-                        res+=line
+                        res += line
                     }
                 }
             }
@@ -121,17 +162,13 @@
         return res
     }
 
-    function readTextFile(file)
-    {
+    function readTextFile(file) {
         dict = {}
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4) {
+                if (rawFile.status === 200 || rawFile.status == 0) {
                     var allText = rawFile.responseText;
 
                     let lines = allText.split(/\r?\n/);
@@ -139,7 +176,7 @@
 
                     for (let i = 0; i < lines.length; i++) {
                         let line = lines[i].split(";");
-                        if(line[0]=="версиям"){
+                        if (line[0] == "версиям") {
                             console.log(line);
                         }
                         if (line.length == 3) {
@@ -158,51 +195,87 @@
     const urlParams = new URLSearchParams(queryString);
     const input = urlParams.get('input')
 
-    if(input != undefined) {
+    if (input != undefined) {
         document.getElementById("text").value = input
         f();
     }
 
-    function rus(a){
-        if((a>='a' && a<='z') || (a>='A' && a<='Z') ){
+    function readTextFile3(file)
+    {
+        vocab = []
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+
+                    let lines = allText.split(/\r?\n/);
+                    //console.log(lines);
+
+                    let prevIndex = 0
+                    for (let i = 0; i < lines.length; i++) {
+                        let line = lines[i].split(";");
+                        index = parseInt(line[3])
+                        pos = line[2]
+                        word = line[0]
+                        def = line[1]
+
+                        if(index != prevIndex) {
+                            vocab.push([])
+                            prevIndex = index
+                        }
+
+                        vocab[vocab.length - 1].push([word, def, pos])
+                    }
+                }
+            }
+        }
+
+        rawFile.send(null);
+    }
+
+    function rus(a) {
+        if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')) {
             return true;
         }
-        if((a>='а' && a<='я') || (a>='А' && a<='Я') ){
+        if ((a >= 'а' && a <= 'я') || (a >= 'А' && a <= 'Я')) {
             return true;
         }
-        if(a == 'ё' || a == 'Ё'){
+        if (a == 'ё' || a == 'Ё') {
             return true
         }
         return false
     }
 
-    function upperfy(w, u){
-        if(u){
-            return w[0].toUpperCase()+w.substr(1, w.length - 1)
-        }
-        else{
+    function upperfy(w, u) {
+        if (u) {
+            return w[0].toUpperCase() + w.substr(1, w.length - 1)
+        } else {
             return w
         }
     }
 
-    function handleText(text){
-        if(dict == undefined){
+    function handleText(text) {
+        if (dict == undefined) {
             readTextFile("dictionary_simple.txt")
         }
 
         res = ""
         words = []
         last = ""
-        for(let i = 0; i<text.length; i++){
+        for (let i = 0; i < text.length; i++) {
 
             if (rus(text[i])) {
                 last += text[i]
             } else {
                 words.push(last)
-                if(text[i] == "\n" || text[i] == "\r"){
+                if (text[i] == "\n" || text[i] == "\r") {
                     words.push("<br>")
-                }
-                else {
+                } else {
                     words.push(text[i])
                 }
                 last = ""
@@ -212,15 +285,15 @@
         words.push(last);
 
 
-        for(let i = 0; i<words.length; i++){
-            if(words[i].length>0) {
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > 0) {
                 let isUpper = words[i][0].toUpperCase() == words[i][0]
                 let w = words[i].toLowerCase()
 
                 if (dict[w] == undefined) {
                     res += upperfy(words[i], isUpper)
                 } else {
-                    res += "<a href=#  onclick=hndwrd(\'"+dict[w][1]+"\');>" + upperfy(dict[w][0], isUpper) + "</a>"
+                    res += "<a href=#  onclick=hndwrd(\'" + dict[w][1] + "\');>" + upperfy(dict[w][0], isUpper) + "</a>"
                 }
                 res += ""
             }
@@ -228,7 +301,7 @@
         return res
     }
 
-    function f(){
+    function f() {
         var inputVal = document.getElementById("text").value;
         var p = document.getElementById("p")
         p.innerHTML = handleText(inputVal);
