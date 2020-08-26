@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,79 +8,144 @@
 <body>
 
 
-<div align="left">
-    <textarea type="text" id="text" cols="100" rows="10" value=""></textarea>
-    <br>
-    <input type="button" onclick="f()" value="Linkify">
-</div>
+<textarea type="text" id="text" cols="100" rows="10" value=""></textarea>
+<br>
+<input type="button" onclick="f()" value="Linkify">
+<input type="button" onclick="dosearch()" value="Search">
 
+<p id ="p"></p>
+<p id ="content"></p>
 
-<p id="p"></p>
-
-
-<p id="content"></p>
-
-
-<script>
-    let vocab = null
-
+<script >
     let dict = null
     let history = []
     let poses = []
     let nietpushen = false
+    let searchvocab = []
 
-    /*
-    function sr2(){
-        var inputVal = document.getElementById("sf").value;
-        if(vocab == null){
-            readTextFile3("vocab.txt")
+    function levenshteinDistance (s, t) {
+        if (!s.length) return t.length;
+        if (!t.length) return s.length;
+
+        return Math.min(
+            levenshteinDistance(s.substr(1), t) + 1,
+            levenshteinDistance(t.substr(1), s) + 1,
+            levenshteinDistance(s.substr(1), t.substr(1)) + (s[0] !== t[0] ? 1 : 0)
+        ) + 1;
+    }
+
+
+    function levenshteinDistance2 (a, b){
+        if(a.length == 0) return b.length;
+        if(b.length == 0) return a.length;
+
+        var matrix = [];
+
+        // increment along the first column of each row
+        var i;
+        for(i = 0; i <= b.length; i++){
+            matrix[i] = [i];
         }
-        let txt = ""
-        cnt = 0
-        max = 1000
 
-        ress = []
+        // increment each column in the first row
+        var j;
+        for(j = 0; j <= a.length; j++){
+            matrix[0][j] = j;
+        }
 
-
-
-        for(let i = 0; i<vocab.length; i++){
-            if(cnt >= max){
-                break
-            }
-
-            points = 1.0/(i+1.0)
-
-
-            for(let j = 0; j<vocab[i].length; j++){
-                //console.log(vocab[i][j], inputVal)
-
-
-
-                if(vocab[i][j][1] != undefined) {
-                    if (vocab[i][j][1].indexOf(inputVal+" ") != -1 || vocab[i][j][1].indexOf(" "+inputVal) != -1 || vocab[i][j][1] === inputVal) {
-                        txt += vocab[i][j][0] +' - ' + vocab[i][j][1] + "\n"
-                        cnt += 1
-                        break;
-                    }
+        // Fill in the rest of the matrix
+        for(i = 1; i <= b.length; i++){
+            for(j = 1; j <= a.length; j++){
+                if(b.charAt(i-1) == a.charAt(j-1)){
+                    matrix[i][j] = matrix[i-1][j-1];
+                } else {
+                    matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
+                        Math.min(matrix[i][j-1] + 1, // insertion
+                            matrix[i-1][j] + 1)); // deletion
                 }
             }
         }
-        var p = document.getElementById("p")
-        txt = handleText(txt);
-        if(txt !== "") {
-            p.innerHTML = txt
+
+        return matrix[b.length][a.length];
+    };
+
+    if(searchvocab.length == 0){
+        readTextFile5("searchlist.txt")
+    }
+
+    function searchlevenstein(word, maxcnt){
+        if(searchvocab.length == 0){
+            readTextFile5("searchlist.txt")
         }
-        else{
-            p.innerHTML = "Nothing found"
+
+        res = []
+        cnt = 0
+        for (let qq = 0; qq<searchvocab.length; qq++) {
+            key = searchvocab[qq]
+            if(key.length >= 1) {
+                dst = levenshteinDistance2(key, word)
+                dst /= key.length
+                //console.log(dst, key)
+
+                if(dst == 0){
+                    return [[0, key]]
+                }
+
+                if(res.length < maxcnt) {
+                    //console.log("1", dst, key, word, res.length)
+                    res.push([dst, key])
+                }
+                else{
+                    //console.log("2", dst, key, word, res.length)
+                    res.sort(function(a, b){return a[0]-b[0]});
+                    if(dst < res[maxcnt - 1][0]){
+                        res[maxcnt - 1] = [dst, key]
+                    }
+                }
+                cnt+=1
+            }
+            if (cnt > 10000){
+                //return res
+            }
+        }
+        return res
+    }
+
+    function letter(chh){
+        if(chh >= 'a' && chh <= 'z'){
+            return true
         }
     }
 
-     */
+    function dosearch(){
+        var inputVal = document.getElementById("text").value;
+        var p = document.getElementById("p")
 
-    function handleback() {
-        if (history.length <= 1) {
+        word = ""
+        for(let i = 0; i<inputVal.length; i++){
+            if(letter(inputVal[i])){
+                word += inputVal[i]
+            }
+            else{
+                break
+            }
+        }
 
-        } else {
+        if(word.length > 0){
+            leven = searchlevenstein(word, 10)
+            newval = ""
+            for(let i = 0; i<leven.length; i++){
+                newval += leven[i][1]+"\n"
+            }
+            p.innerHTML = handleText(newval);
+        }
+    }
+
+    function handleback(){
+        if(history.length <= 1){
+
+        }
+        else{
             history.pop()
 
             nietpushen = true
@@ -87,9 +153,10 @@
             document.documentElement.scrollTop = poses[history.length - 1]
         }
 
-        if (poses <= 1) {
+        if(poses <= 1){
 
-        } else {
+        }
+        else{
             document.documentElement.scrollTop = poses[poses.length - 1]
             console.log("active", poses)
             poses.pop()
@@ -104,22 +171,25 @@
 
         if (e.keyCode == '38') {
             // up arrow
-        } else if (e.keyCode == '40') {
+        }
+        else if (e.keyCode == '40') {
             // down arrow
-        } else if (e.keyCode == '37') {
+        }
+        else if (e.keyCode == '37') {
             handleback()
-        } else if (e.keyCode == '39') {
+        }
+        else if (e.keyCode == '39') {
             // right arrow
         }
     }
 
-    function hndwrd(wrd) {
+    function hndwrd(wrd){
         //console.log(document.documentElement.scrollTop)
 
-        if (!nietpushen) {
+        if(!nietpushen) {
             history.push(wrd)
 
-            if (history.length > 1) {
+            if(history.length>1) {
                 poses.push(document.documentElement.scrollTop)
             }
         }
@@ -129,7 +199,7 @@
         p.innerHTML = handleText(inputVal);
         */
 
-        cont = readTextFile2(wrd + ".html")
+        cont = readTextFile2(wrd+".html")
         var content = document.getElementById("content")
         content.innerHTML = cont;
         //window.open(wrd+".html", '_blank');
@@ -139,13 +209,17 @@
         console.log(history, poses)
     }
 
-    function readTextFile2(file) {
+    function readTextFile2(file)
+    {
         res = ""
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function () {
-            if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status == 0) {
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
                     var allText = rawFile.responseText;
 
                     let lines = allText.split(/\r?\n/);
@@ -153,7 +227,7 @@
 
                     for (let i = 0; i < lines.length; i++) {
                         let line = lines[i].split(";");
-                        res += line
+                        res+=line
                     }
                 }
             }
@@ -162,13 +236,61 @@
         return res
     }
 
-    function readTextFile(file) {
+    function readTextFile5(file)
+    {
+        searchvocab = []
+        res = ""
+        var rawFile = new XMLHttpRequest();
+        rawFile.open("GET", file, false);
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
+                    var allText = rawFile.responseText;
+
+                    let lines = allText.split(/\r?\n/);
+                    //console.log(lines);
+
+                    for (let i = 0; i < lines.length; i++) {
+                        line = lines[i]
+                        if(line.length > 0){
+
+                            good = true
+                            for(let i = 0; i<line.length; i++){
+                                if(letter(line[i])){
+                                    break
+                                }
+                                else{
+                                    good = false
+                                }
+                            }
+
+                            if(good) {
+                                console.log('aaa', line)
+                                searchvocab.push(line)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        rawFile.send(null);
+        return res
+    }
+
+    function readTextFile(file)
+    {
         dict = {}
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function () {
-            if (rawFile.readyState === 4) {
-                if (rawFile.status === 200 || rawFile.status == 0) {
+        rawFile.onreadystatechange = function ()
+        {
+            if(rawFile.readyState === 4)
+            {
+                if(rawFile.status === 200 || rawFile.status == 0)
+                {
                     var allText = rawFile.responseText;
 
                     let lines = allText.split(/\r?\n/);
@@ -176,9 +298,6 @@
 
                     for (let i = 0; i < lines.length; i++) {
                         let line = lines[i].split(";");
-                        if (line[0] == "версиям") {
-                            console.log(line);
-                        }
                         if (line.length == 3) {
                             dict[line[0]] = [line[1], line[2]]
                         }
@@ -195,87 +314,51 @@
     const urlParams = new URLSearchParams(queryString);
     const input = urlParams.get('input')
 
-    if (input != undefined) {
+    if(input != undefined) {
         document.getElementById("text").value = input
         f();
     }
 
-    function readTextFile3(file)
-    {
-        vocab = []
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    var allText = rawFile.responseText;
-
-                    let lines = allText.split(/\r?\n/);
-                    //console.log(lines);
-
-                    let prevIndex = 0
-                    for (let i = 0; i < lines.length; i++) {
-                        let line = lines[i].split(";");
-                        index = parseInt(line[3])
-                        pos = line[2]
-                        word = line[0]
-                        def = line[1]
-
-                        if(index != prevIndex) {
-                            vocab.push([])
-                            prevIndex = index
-                        }
-
-                        vocab[vocab.length - 1].push([word, def, pos])
-                    }
-                }
-            }
-        }
-
-        rawFile.send(null);
-    }
-
-    function rus(a) {
-        if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z')) {
+    function rus(a){
+        if((a>='a' && a<='z') || (a>='A' && a<='Z') ){
             return true;
         }
-        if ((a >= 'а' && a <= 'я') || (a >= 'А' && a <= 'Я')) {
+        if((a>='а' && a<='я') || (a>='А' && a<='Я') ){
             return true;
         }
-        if (a == 'ё' || a == 'Ё') {
+        if(a == 'ё' || a == 'Ё'){
             return true
         }
         return false
     }
 
-    function upperfy(w, u) {
-        if (u) {
-            return w[0].toUpperCase() + w.substr(1, w.length - 1)
-        } else {
+    function upperfy(w, u){
+        if(u){
+            return w[0].toUpperCase()+w.substr(1, w.length - 1)
+        }
+        else{
             return w
         }
     }
 
-    function handleText(text) {
-        if (dict == undefined) {
+    function handleText(text){
+        if(dict == undefined){
             readTextFile("dictionary_simple.txt")
         }
 
         res = ""
         words = []
         last = ""
-        for (let i = 0; i < text.length; i++) {
+        for(let i = 0; i<text.length; i++){
 
             if (rus(text[i])) {
                 last += text[i]
             } else {
                 words.push(last)
-                if (text[i] == "\n" || text[i] == "\r") {
+                if(text[i] == "\n" || text[i] == "\r"){
                     words.push("<br>")
-                } else {
+                }
+                else {
                     words.push(text[i])
                 }
                 last = ""
@@ -285,15 +368,15 @@
         words.push(last);
 
 
-        for (let i = 0; i < words.length; i++) {
-            if (words[i].length > 0) {
+        for(let i = 0; i<words.length; i++){
+            if(words[i].length>0) {
                 let isUpper = words[i][0].toUpperCase() == words[i][0]
                 let w = words[i].toLowerCase()
 
                 if (dict[w] == undefined) {
                     res += upperfy(words[i], isUpper)
                 } else {
-                    res += "<a href=#  onclick=hndwrd(\'" + dict[w][1] + "\');>" + upperfy(dict[w][0], isUpper) + "</a>"
+                    res += "<a href=#  onclick=hndwrd(\'"+dict[w][1]+"\');>" + upperfy(dict[w][0], isUpper) + "</a>"
                 }
                 res += ""
             }
@@ -301,7 +384,7 @@
         return res
     }
 
-    function f() {
+    function f(){
         var inputVal = document.getElementById("text").value;
         var p = document.getElementById("p")
         p.innerHTML = handleText(inputVal);
