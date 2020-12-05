@@ -1,309 +1,313 @@
-
 <!DOCTYPE html>
-<html lang="en">
 <head>
-
+    <script type="text/javascript" src="api_requests.js"></script>
+    <script type="text/javascript" src="words_handler.js"></script>
+    <script type="text/javascript" src="jokes.js"></script>
     <script type="text/javascript" src="search.js"></script>
     <script type="text/javascript" src="levenstein.js"></script>
-    <script type="text/javascript" src="jokes.js"></script>
+    <script type="text/javascript" src="dep.js"></script>
+    <script type="text/javascript" src="style.css"></script>
+    <script type="text/javascript" src="TreeMenu.js"></script>
 
-    <style>
-        table{
-            width: 100%;
-        }
-
-        td {
-            width:50%;
-            overflow: hidden;
-            vertical-align: top;
-            border: 1px solid black;
-        }
+    <link rel="stylesheet"
+          type="text/css"
+          href="style.css"/>
 
 
-        table.center {
-            margin-left: auto;
-            margin-right: auto;
-        }
-    </style>
-
+    <link rel="icon"
+          type="image/svg"
+          href="images/flags/ru.svg">
 
     <meta charset="UTF-8">
-    <title>Unilang Dutch</title>
+    <title>Unilang Russian</title>
 </head>
 <body>
 
 
+<div class="menu" id="menudiv" hidden="true">
 
-<textarea type="text" id="text" cols="100" rows="10" value=""></textarea>
-<br>
+</div>
 
+<header>
 
+    <table>
+        <tr>
 
-<input type="button" onclick="f()" value="Linkify">
-<input type="button" onclick="dosearchmean()" value="Search meaning">
-<input type="button" onclick="dosearchsim()" value="Search similarity">
-<input type="button" onclick="dojoke()" value="Random joke">
-
-<p id ="p"></p>
-<p id="content"> </p>
-
-
-
+            <td width="40%">
+                <a href="#" onclick="f()">
+                    <img src="images/scroll.svg" alt="Explore text" title="Linkify"
+                         style="width:50px;height:50px;">
+                </a>
 
 
-<script >
-    let dict = null
-    let history = []
-    let poses = []
-    let nietpushen = false
+                <a href="#" onclick="dojoke()">
+                    <img src="images/book.svg" alt="Random joke" title="Read texts"
+                         style="width:50px;height:50px;">
+                </a>
 
-    function letter(chh){
-        if(chh >= 'a' && chh <= 'z'){
-            return true
-        }
+                <a href="#" onclick="ffff()">
+                    <img src="images/test.svg" alt="Vocabulary test" title="Vocabulary test"
+                         style="width:50px;height:50px;">
+                </a>
+
+                <a href="vocabulary_test.html?n=1000" target="_blank" id="star1" hidden="true">
+                    <img src="images/easy.svg" alt="Vocabulary test" title="Easy"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="vocabulary_test.html?n=5000" target="_blank" id="star2" hidden="true">
+                    <img src="images/medium.svg" alt="Vocabulary test" title="Medium"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="vocabulary_test.html" target="_blank" id="star3" hidden="true">
+                    <img src="images/hard.svg" alt="Vocabulary test" title="Hard"
+                         style="width:30px;height:30px;">
+                </a>
+            </td>
+
+            <td width="30%">
+                <a href="settings_page.html" target="_blank">
+                    <img src="images/settings.svg" alt="Settings" title="Settings"
+                         style="width:50px;height:50px;">
+                </a>
+
+                <a href="#" onclick="handleback()">
+                    <img src="images/prev.svg" title="Previous article (left arrow key)"
+                         style="width:50px;height:50px;">
+                </a>
+
+                <a href="https://discord.gg/2sfFbZGbbN" target="_blank">
+                    <img src="images/discord.svg" alt="Discord" title="Join our discord"
+                         style="width:50px;height:50px;">
+                </a>
+            </td>
+
+            <td width="30%">
+
+                <p>Learn languages with Unilang </p>
+
+                <a href="https://einhornus.github.io/unilang_en/linkify.html">
+                    <img src="images/flags/en.svg" alt="English" title="English"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="https://einhornus.github.io/unilang_sp/linkify.html">
+                    <img src="images/flags/es.svg" alt="Spanish" title="Spanish"
+                         style="width:30px;height:30px;">
+                </a>
+
+
+                <a href="https://einhornus.github.io/unilang_de/linkify.html">
+                    <img src="images/flags/de.svg" alt="German" title="German"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="https://einhornus.github.io/unilang_fr/linkify.html">
+                    <img src="images/flags/fr.svg" alt="French" title="French"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="https://einhornus.github.io/unilang/linkify.html">
+                    <img src="images/flags/ru.svg" alt="Russian" title="Russian"
+                         style="background-color:lawngreen; width:30px;height:30px;">
+                </a>
+
+                <a href="https://einhornus.github.io/unilang_pt/linkify.html">
+                    <img src="images/flags/pt.svg" alt="Portuguese" title="Portuguese"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="https://einhornus.github.io/unilang_it/linkify.html">
+                    <img src="images/flags/it.svg" alt="Italian" title="Italian"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="https://einhornus.github.io/unilang_nl/linkify.html">
+                    <img src="images/flags/nl.svg" alt="Dutch" title="Dutch"
+                         style="width:30px;height:30px;">
+                </a>
+
+                <a href="https://einhornus.github.io/unilang_sv/linkify.html">
+                    <img src="images/flags/sv.svg" alt="Swedish" title="Swedish"
+                         style="width:30px;height:30px;">
+                </a>
+            </td>
+    </table>
+</header>
+
+<header>
+    <table>
+        <td width="40%">
+            <textarea type="text" id="text" cols=30 rows="17" placeholder="Enter some Russian text here"></textarea>
+        </td>
+
+        <td width="0%" id="pics" id="pics">
+        </td>
+
+        <td width="20%" id="prono_part">
+
+        </td>
+
+        <td width="40%" id="ety_part" style="font-size: 14px">
+
+        </td>
+
+
+    </table>
+</header>
+
+<section>
+    <nav>
+        <!---
+        <div id="bodydesc2"
+             style="margin-left:auto; margin-right:auto; margin-top:40px;">
+
+            <textarea type="text" id="text" cols=65 rows="10" placeholder="Enter a Dutch text here"></textarea>
+
+        </div>
+        --->
+
+        <table class="pane">
+            <tr>
+
+                <td>
+
+
+                    <a href="#" onclick="dosearch(1)">
+
+                        <img src="images//loupe.svg" title="Search for meaning"
+                             style="width:15px;height:15px;">
+                    </a>
+
+
+                    <input cols="20" id="searchfield" value="">
+
+                    <a href="#" onclick="dosearch(2)">
+                        <img src="images//flags//ru.svg" title="Search for similar"
+                             style="width:15px;height:15px;">
+                    </a>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <div class="slidecontainer" hidden="true" id="sld">
+                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                        <p id="demo" style="width: 200px"></p>
+
+                        <a href="#" onclick="doback()">
+                            <img src="images//prev.svg" alt="Backward" title="Previous page"
+                                 style="width:20px;height:20px;">
+                        </a>
+
+                        <a href="#" onclick="dofwd()">
+                            <img src="images//next.svg" alt="Forward" title="Next page"
+                                 style="width:20px;height:20px;">
+                        </a>
+                    </div>
+
+
+                    </p>
+                </td>
+
+            </tr>
+        </table>
+
+
+        <div id="bodydesc">
+            <p id="p" style="width: 90%; font-size:16px"></p>
+        </div>
+
+    </nav>
+    <article>
+        <p id="content"></p>
+    </article>
+</section>
+
+<script>
+    let instruction = " <h3>Welcome to Unilang</h3>\n" +
+        "            <p>\n" +
+        "                Just put some Russian text into the box on the left and click the parchment scroll icon above. It will turn words from the text into clickable links, so you can read the text while looking up articles on words you're unfamiliar with.\n" +
+        "                <br>\n" +
+        "                You can also find some texts to read clicking on the book icon (right next to the parchment scroll).\n" +
+        "            </p>" + "<p>\n" +
+        "            Right under the text box there is the search box.\n" +
+        "                <br>\n" +
+        "                If you put a word here (that exists in English or in any of the languages you set in browser settings) and click the left icon, it will find the possible ways to translate this word to Russian.\n" +
+        "                <br>\n" +
+        "                If you put a Russian word (possibly misspelled) and click the right icon, it will find the most similar looking Russian words in the dictionary.\n" +
+        "            </p>"
+
+    document.getElementById("content").innerHTML = instruction
+
+
+    //document.getElementById("searchfield").value = "на"
+    //dosearch(1)
+
+    //document.getElementById("searchfield").value = "language"
+    //dosearch(1)
+
+    //hndwrd("зверек")
+
+    function ffff() {
+        document.getElementById("star1").hidden = !document.getElementById("star1").hidden
+        document.getElementById("star2").hidden = !document.getElementById("star2").hidden
+        document.getElementById("star3").hidden = !document.getElementById("star3").hidden
     }
 
-    function handleback(){
-        if(history.length <= 1){
+    //hndwrd("кабан");
+    //hndwrd("шалун");
+    //hndwrd("чтобы");
+    //hndwrd("усовершенствовать");
+    //hndwrd("правильно");
+    //hndwrd("звонок");
 
-        }
-        else{
-            history.pop()
+    console.log(document.cookie)
 
-            nietpushen = true
-            hndwrd(history[history.length - 1])
-            document.documentElement.scrollTop = poses[history.length - 1]
-        }
-
-        if(poses <= 1){
-
-        }
-        else{
-            document.documentElement.scrollTop = poses[poses.length - 1]
-            console.log("active", poses)
-            poses.pop()
-        }
+    let __mt = getCookie_("mt")
+    if(__mt == ""){
+        setCookie_("mt", "1", 1000)
     }
 
-    function dojoke(){
-        var p = document.getElementById("p")
-        p.innerHTML = handleText(randomjoke());
+    let __inf = getCookie_("inf")
+    if(__inf == ""){
+        setCookie_("inf", "0", 1000)
     }
 
-    document.onkeydown = checkKey;
-
-    function checkKey(e) {
-        e = e || window.event;
-
-        if (e.keyCode == '38') {
-            // up arrow
-        }
-        else if (e.keyCode == '40') {
-            // down arrow
-        }
-        else if (e.keyCode == '37') {
-            handleback()
-        }
-        else if (e.keyCode == '39') {
-            // right arrow
-        }
+    let __rt = getCookie_("rt")
+    if(__rt == ""){
+        setCookie_("rt", "0", 1000)
     }
 
-    function hndwrd(wrd){
-        //console.log(document.documentElement.scrollTop)
-
-        if(!nietpushen) {
-            history.push(wrd)
-
-            if(history.length>1) {
-                poses.push(document.documentElement.scrollTop)
-            }
-        }
-        /*
-        var inputVal = document.getElementById("text").value;
-        var p = document.getElementById("p")
-        p.innerHTML = handleText(inputVal);
-        */
-
-        cont = readTextFile2("articles//"+wrd+".html")
-        var content1 = document.getElementById("content")
-        content1.innerHTML = cont;
-
-        //window.open(wrd+".html", '_blank');
-
-        nietpushen = false
-
-        console.log(history, poses)
+    let __un = getCookie_("un")
+    if(__un == ""){
+        setCookie_("un", "0", 1000)
     }
 
-    function readTextFile2(file)
-    {
-        res = ""
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    var allText = rawFile.responseText;
-
-                    let lines = allText.split(/\r?\n/);
-                    //console.log(lines);
-
-                    for (let i = 0; i < lines.length; i++) {
-                        let line = lines[i].split(";");
-                        res+=line
-                    }
-                }
-            }
-        }
-        rawFile.send(null);
-        return res
+    let __syn = getCookie_("syn")
+    if(__syn == ""){
+        setCookie_("syn", "0", 1000)
     }
 
-    function readTextFile(file)
-    {
-        dict = {}
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    var allText = rawFile.responseText;
-
-                    let lines = allText.split(/\r?\n/);
-                    //console.log(lines);
-
-                    for (let i = 0; i < lines.length; i++) {
-                        let line = lines[i].split(";");
-                        if (line.length == 3) {
-                            dict[line[0]] = [line[1], line[2]]
-                        }
-                    }
-                }
-            }
-        }
-        rawFile.send(null);
+    let __rel = getCookie_("rel")
+    if(__rel == ""){
+        setCookie_("rel", "0", 1000)
     }
 
-    //alert("smth")
-    readTextFile("dictionary_simple.txt")
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const input = urlParams.get('input')
-
-    if(input != undefined) {
-        document.getElementById("text").value = input
-        f();
+    let __der = getCookie_("der")
+    if(__der == ""){
+        setCookie_("der", "0", 1000)
     }
 
-    function rus(a){
-        punctuation = [
-            '<',
-                '>',
-                '!',
-                ',',
-                ' ',
-                '?',
-                ';',
-                ':',
-                '"',
-                '&',
-                '*',
-                '\'',
-                '.',
-                '%',
-                '[',
-                ']',
-                '(',
-                ')',
-                '{',
-                '}',
-                '\n',
-                '\r',
-                '…',
-                '«',
-                '»',
-                '=',
-                '’',
-                '‘',
-                '/',
-            '-'
-        ]
-
-        if (punctuation.includes(a)){
-            return false
-        }
-        else{
-            return true
-        }
-        return false
-    }
-
-    function upperfy(w, u){
-        if(u){
-            return w[0].toUpperCase()+w.substr(1, w.length - 1)
-        }
-        else{
-            return w
-        }
-    }
-
-    function handleText(text){
-        if(dict == undefined){
-            readTextFile("dictionary_simple.txt")
-        }
-
-        res = ""
-        words = []
-        last = ""
-        for(let i = 0; i<text.length; i++){
-
-            if (rus(text[i])) {
-                last += text[i]
-            } else {
-                words.push(last)
-                if(text[i] == "\n" || text[i] == "\r"){
-                    words.push("<br>")
-                }
-                else {
-                    words.push(text[i])
-                }
-                last = ""
-            }
-
-        }
-        words.push(last);
+    searchmean("language", false)
 
 
-        for(let i = 0; i<words.length; i++){
-            if(words[i].length>0) {
-                let isUpper = words[i][0].toUpperCase() == words[i][0]
-                let w = words[i].toLowerCase()
+    //hndwrd("сказать");
 
-                if (dict[w] == undefined) {
-                    res += upperfy(words[i], isUpper)
-                } else {
-                    res += "<a href=#  onclick=hndwrd(\'"+dict[w][1]+"\');>" + upperfy(dict[w][0], isUpper) + "</a>"
-                }
-                res += ""
-            }
-        }
-        return res
-    }
+    make_menu()
 
-    function f(){
-        var inputVal = document.getElementById("text").value;
-        var p = document.getElementById("p")
-        p.innerHTML = handleText(inputVal);
-    }
 </script>
-
-
 </body>
 </html>
+

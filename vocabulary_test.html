@@ -2,53 +2,87 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="style.css"/>
+
+
+    <link rel="icon"
+          type="image/svg"
+          href="images/flags/ru.svg">
+
+
+    <script type="text/javascript" src="api_requests.js"></script>
+    <script type="text/javascript" src="obfusc.js"></script>
+    <script type="text/javascript" src="search.js"></script>
+    <script type="text/javascript" src="jokes.js"></script>
+
+
     <title>Vocabulary test</title>
+
 </head>
 <body>
 
+<section>
+    <nav>
+            <p id="info" style="font-size:20px"></p>
+
+        <div align="center">
+            <input type="button" id="b0" onclick="answer(0)" value="" class="mybutton">
+            <br>
+
+            <input type="button" id="b1" onclick="answer(1)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b2" onclick="answer(2)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b3" onclick="answer(3)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b4" onclick="answer(4)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b5" onclick="answer(5)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b6" onclick="answer(6)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b7" onclick="answer(7)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b8" onclick="answer(8)" value="" class="mybutton">
+            <br>
+            <input type="button" id="b9" onclick="answer(9)" value="" class="mybutton">
+            <br>
 
 
+            <p id="expl">
+            </p>
 
 
+            <input type="button" id="next" onclick="nextQuestion()" value="Next" class="mybutton">
+        </div>
+    </nav>
 
-<p id ="info"></p>
-
-
-<input type="button" id="b0" onclick="answer(0)" value="">
-<br>
-<input type="button" id="b1" onclick="answer(1)" value="">
-<br>
-<input type="button" id="b2" onclick="answer(2)" value="">
-<br>
-<input type="button" id="b3" onclick="answer(3)" value="">
-<br>
-<input type="button" id="b4" onclick="answer(4)" value="">
-<br>
-<input type="button" id="b5" onclick="answer(5)" value="">
-<br>
-<input type="button" id="b6" onclick="answer(6)" value="">
-<br>
-<input type="button" id="b7" onclick="answer(7)" value="">
-<br>
-<input type="button" id="b8" onclick="answer(8)" value="">
-<br>
-<input type="button" id="b9" onclick="answer(9)" value="">
-<br>
-
-<p id ="expl"></p>
+    <article>
 
 
-<input type="button" id="next"  onclick="nextQuestion()" value="Next">
-<p id ="content"></p>
+        <table>
+            <td width="30%" id="prono_part" >
+
+            </td>
+
+            <td width="30%" id="ety_part" >
+
+            </td>
 
 
-<script >
+        </table>
 
-    let dict = null
-    let history = []
-    let poses = []
-    let nietpushen = false
-    let vocab = []
+        <p id="content"></p>
+
+    </article>
+</section>
+
+
+<script>
+    let test_vocab = []
 
     let nmax = 20
     let curnum = 1
@@ -58,21 +92,18 @@
     let max_words = 1000000
 
     //document.getElementById("all").style.visibility = 'hidden';
+    const __queryString = window.location.search;
+    const __urlParams = new URLSearchParams(__queryString);
 
-    //alert("smth")
-    readTextFile("dictionary_simple.txt")
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
+    let mww = urlParams.get('n')
 
-    mww = urlParams.get('n')
-
-    if(mww != null){
+    if (mww != null) {
         max_words = mww
     }
 
     console.log("MW", max_words)
 
-    function init(){
+    function init() {
         buttons.push(document.getElementById("b0"));
         buttons.push(document.getElementById("b1"));
         buttons.push(document.getElementById("b2"));
@@ -86,49 +117,22 @@
     }
 
 
-    function answer(index){
-        if(!mode){
+    function answer(index) {
+        if (!mode) {
             curnum++;
             mode = true
             document.getElementById("next").style.width = "200px"
             document.getElementById("next").style.visibility = "visible";
 
-            if(curquest[0][index][1]){
-                document.getElementById("expl").innerText = "Correct!"
+            if (curquest[0][index][1]) {
+                document.getElementById("expl").innerHTML = "<br><br>Correct!"
                 goodAnswers++;
+            } else {
+                document.getElementById("expl").innerHTML = "<br><br>Wrong, the correct answer is " + handleText(curquest[2])
             }
-            else{
-                document.getElementById("expl").innerText = "Wrong, the correct answer is "+curquest[2]
-            }
+        } else {
+            hndwrd(buttons[index].value.replaceAll("́", ""))
         }
-        else{
-            hndwrd(buttons[index].value)
-        }
-    }
-
-    function hndwrd(wrd){
-        //console.log(document.documentElement.scrollTop)
-
-        if(!nietpushen) {
-            history.push(wrd)
-
-            if(history.length>1) {
-                poses.push(document.documentElement.scrollTop)
-            }
-        }
-        /*
-        var inputVal = document.getElementById("text").value;
-        var p = document.getElementById("p")
-        p.innerHTML = handleText(inputVal);
-        */
-
-        cont = readTextFile2(wrd+".html")
-        var content = document.getElementById("content")
-        content.innerHTML = cont;
-        //window.open(wrd+".html", '_blank');
-
-        nietpushen = false
-
     }
 
     function randomInt(min, max) {
@@ -150,73 +154,88 @@
         return a;
     }
 
-    function getQuestion(index){
-        size = Math.floor(Math.min(vocab.length, max_words)/nmax/diff)
+    function getQuestion(index) {
+        size = Math.floor(Math.min(test_vocab.length, max_words) / nmax / diff)
 
-        console.log("SZ", size);
 
-        minIndex = (index-1)*size
-        maxIndex = Math.min(index*size, vocab.length - 1)
-        console.log(minIndex, maxIndex);
+        minIndex = (index - 1) * size
+        maxIndex = Math.min(index * size, test_vocab.length - 1)
+        console.log(index, size, test_vocab.length);
 
         numberIndex = randomInt(minIndex, maxIndex)
-        definitionIndex = randomInt(0, vocab[numberIndex].length)
 
-        word = vocab[numberIndex][definitionIndex][0]
-        def = vocab[numberIndex][definitionIndex][1]
-        pos = vocab[numberIndex][definitionIndex][2]
+
+        definitionIndex = randomInt(0, test_vocab[numberIndex].length)
+
+        word = test_vocab[numberIndex][definitionIndex][0]
+        def = test_vocab[numberIndex][definitionIndex][1]
+        pos = test_vocab[numberIndex][definitionIndex][2]
 
         res = []
-        for(let i = 0; i<10; i++){
+        for (let i = 0; i < 10; i++) {
             res.push([])
         }
 
         rightIndex = randomInt(0, 10)
         res[rightIndex] = [word, true]
 
-        minIndex = numberIndex-size
-        maxIndex = numberIndex+size
-        if(minIndex < 0){
+        minIndex = numberIndex - size
+        maxIndex = numberIndex + size
+        if (minIndex < 0) {
             minIndex = 0
         }
-        if(maxIndex >= vocab.length){
-            maxIndex = vocab.length - 1
+        if (maxIndex >= test_vocab.length) {
+            maxIndex = test_vocab.length - 1
         }
 
+        let ttt1 = get_english_transes(word)
 
         goodsies = []
         let set = new Set()
         set.add(word)
-        for(let j = minIndex; j<=maxIndex; j++){
-            for(let k = 0; k<vocab[j].length; k++){
-                if(j != numberIndex) {
+        for (let j = minIndex; j <= maxIndex; j++) {
+            for (let k = 0; k < test_vocab[j].length; k++) {
+                if (j != numberIndex) {
                     numberIndex2 = j
                     definitionIndex2 = k
 
-                    word2 = vocab[numberIndex2][definitionIndex2][0]
-                    def2 = vocab[numberIndex2][definitionIndex2][1]
-                    pos2 = vocab[numberIndex2][definitionIndex2][2]
+                    word2 = test_vocab[numberIndex2][definitionIndex2][0]
+                    def2 = test_vocab[numberIndex2][definitionIndex2][1]
+                    pos2 = test_vocab[numberIndex2][definitionIndex2][2]
 
-                    let goodpos = false
-                    if (pos == "NOUN" || pos == "VERB" || pos == "ADJECTIVE") {
-                        goodpos = pos2 == pos
-                    } else {
-                        goodpos = pos2 != "NOUN" && pos2 != "VERB" && pos2 != "ADJECTIVE"
+
+                    let ttt2 = get_english_transes(word2)
+                    let good_wrd = true
+                    for(let qq1 = 0; qq1 < ttt1.length; qq1++){
+                        for(let qq2 = 0; qq2 < ttt2.length; qq2++){
+                            if(ttt1[qq1] == ttt2[qq2]){
+                                good_wrd = false;
+                            }
+                        }
                     }
 
-                    if (goodpos && !set.has(word2)) {
-                        goodsies.push([word2, false])
-                        set.add(word2)
+                    if(good_wrd) {
+                        let goodpos = false
+                        if (pos == "NOUN" || pos == "VERB" || pos == "ADJECTIVE") {
+                            goodpos = pos2 == pos
+                        } else {
+                            goodpos = pos2 != "NOUN" && pos2 != "VERB" && pos2 != "ADJECTIVE"
+                        }
+
+                        if (goodpos && !set.has(word2)) {
+                            goodsies.push([word2, false])
+                            set.add(word2)
+                        }
                     }
                 }
             }
         }
 
-        while (goodsies.length <= res.length - 1){
-            numberIndex3 = randomInt(0, vocab.length - 1)
-            definitionIndex3 = randomInt(0, vocab[numberIndex3].length)
-            word5 = vocab[numberIndex3][definitionIndex3][0]
-            if(!set.has(word5)) {
+        while (goodsies.length <= res.length - 1) {
+            numberIndex3 = randomInt(0, test_vocab.length - 1)
+            definitionIndex3 = randomInt(0, test_vocab[numberIndex3].length)
+            word5 = test_vocab[numberIndex3][definitionIndex3][0]
+            if (!set.has(word5)) {
                 goodsies.push([word5, false])
                 set.add(word5)
             }
@@ -225,49 +244,48 @@
         shuffle(goodsies);
 
         let gi = 0
-        for(let i = 0; i<res.length; i++){
-            if(i != rightIndex){
+        for (let i = 0; i < res.length; i++) {
+            if (i != rightIndex) {
                 res[i] = goodsies[gi]
-                gi+=1
+                gi += 1
             }
         }
 
         rrr = [res, def, word]
 
-        console.log(goodsies)
-        console.log(rrr)
-
         return rrr
     }
 
-    function showResults(){
+    function showResults() {
 
-        for(let i = 0; i<buttons.length; i++){
+        for (let i = 0; i < buttons.length; i++) {
             buttons[i].style.visibility = "hidden"
         }
 
         document.getElementById("next").style.visibility = "hidden"
-        document.getElementById("expl").innerText = ""
-        document.getElementById("info").innerHTML = "Congratulations! You answered "+goodAnswers+"/"+nmax + " questions correctly";
+        document.getElementById("expl").innerHTML = "<br>"
+        document.getElementById("info").innerHTML = "Congratulations! You answered " + goodAnswers + "/" + nmax + " questions correctly";
         document.getElementById("content").innerHTML = "";
     }
 
     let curquest = null
     let goodAnswers = 0
 
-    function nextQuestion(){
+    function nextQuestion() {
         document.getElementById("content").innerHTML = "";
-        if(curnum >= nmax+1){
+        document.getElementById("ety_part").innerHTML = "";
+        document.getElementById("prono_part").innerHTML = "";
+
+        if (curnum >= nmax + 1) {
             showResults()
             mode = true
-        }
-        else{
-            document.getElementById("expl").innerText = ""
+        } else {
+            document.getElementById("expl").innerHTML = "<br>"
             mode = false
-            let is = "Question "+curnum+"<br>";
+            let is = "<h1> Question " + curnum +  "/"+nmax+"</h1>";
 
-            for(let i = 0; i<buttons.length; i++){
-                buttons[i].style.width = "200px"
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].style.width = "300px"
             }
 
             curquest = getQuestion(curnum)
@@ -276,8 +294,13 @@
             document.getElementById("info").innerHTML = is;
 
             console.log(buttons)
-            for(let q = 0; q<buttons.length; q++){
-                buttons[q].value = curquest[0][q][0]
+            for (let q = 0; q < buttons.length; q++) {
+                let t = handleText(curquest[0][q][0])
+                __after = t.substring(t.indexOf(">")+1)
+                t = __after.substring(0, __after.indexOf("<"))
+
+                console.log()
+                buttons[q].value = t
             }
 
             document.getElementById("next").style.visibility = "hidden";
@@ -285,107 +308,87 @@
 
     }
 
-    readTextFile3("vocab.txt")
+
+    let __mt = getCookie_("mt")
+    if(__mt == ""){
+        setCookie_("mt", "1", 1000)
+    }
+
+    let __inf = getCookie_("inf")
+    if(__inf == ""){
+        setCookie_("inf", "0", 1000)
+    }
+
+    let __rt = getCookie_("rt")
+    if(__rt == ""){
+        setCookie_("rt", "0", 1000)
+    }
+
+    let __un = getCookie_("un")
+    if(__un == ""){
+        setCookie_("un", "0", 1000)
+    }
+
+    let __syn = getCookie_("syn")
+    if(__syn == ""){
+        setCookie_("syn", "0", 1000)
+    }
+
+    let __rel = getCookie_("rel")
+    if(__rel == ""){
+        setCookie_("rel", "0", 1000)
+    }
+
+    let __der = getCookie_("der")
+    if(__der == ""){
+        setCookie_("der", "0", 1000)
+    }
+
+
+    searchmean("language", false)
+    readvoc("vocab2.txt")
     init()
     nextQuestion()
 
-    function handleback(){
-        if(history.length <= 1){
 
-        }
-        else{
-            history.pop()
+    function readvoc(file) {
+        test_vocab = []
 
-            nietpushen = true
-            hndwrd(history[history.length - 1])
-            document.documentElement.scrollTop = poses[history.length - 1]
-        }
+        for (let i = 0; i < plainwordlist.length; i++) {
+            if (reverse_links[plainwordlist[i]] != undefined) {
+                _locallist = []
+                _indexes = reverse_links[plainwordlist[i]]
+                for (let j = 0; j < _indexes.length; j++) {
+                    index = _indexes[j]
+                    vcb = vocabs[index]
 
-        if(poses <= 1){
+                    pos = vcb[0][1].toUpperCase()
+                    def = vcb[0][0]
+                    wwwww = vcb[1][0]
 
-        }
-        else{
-            document.documentElement.scrollTop = poses[poses.length - 1]
-            console.log("active", poses)
-            poses.pop()
-        }
+                    def = def.replace(wwwww+";", "<b>"+wwwww+"</b>, "+pos.toLowerCase()+" &#8212 <br>")
 
-    }
+                    def += "<br>"
+                    for(let qq = 1; qq<existing_langs.length; qq++){
+                        if(existing_langs[qq] == 1 && qq != main_lang && vcb[1][qq].length>0){
+                            def += "<br>"
+                            def += get_flag(std_langs[qq])+" "+vcb[1][qq].join(", ")
+                            def += "<br>"
+                        }
+                    }
 
-    document.onkeydown = checkKey;
+                    _locallist.push([plainwordlist[i], def, vcb[0][1].toUpperCase()]);
 
-    function checkKey(e) {
-        e = e || window.event;
-
-        if (e.keyCode == '38') {
-            // up arrow
-        }
-        else if (e.keyCode == '40') {
-            // down arrow
-        }
-        else if (e.keyCode == '37') {
-            handleback()
-        }
-        else if (e.keyCode == '39') {
-            // right arrow
-        }
-    }
-
-    function hndwrd(wrd){
-        //console.log(document.documentElement.scrollTop)
-
-        if(!nietpushen) {
-            history.push(wrd)
-
-            if(history.length>1) {
-                poses.push(document.documentElement.scrollTop)
-            }
-        }
-        /*
-        var inputVal = document.getElementById("text").value;
-        var p = document.getElementById("p")
-        p.innerHTML = handleText(inputVal);
-        */
-
-        cont = readTextFile2(wrd+".html")
-        var content = document.getElementById("content")
-        content.innerHTML = cont;
-        //window.open(wrd+".html", '_blank');
-
-        nietpushen = false
-
-    }
-
-    function readTextFile2(file)
-    {
-        res = ""
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    var allText = rawFile.responseText;
-
-                    let lines = allText.split(/\r?\n/);
-                    //console.log(lines);
-
-                    for (let i = 0; i < lines.length; i++) {
-                        let line = lines[i].split(";");
-                        res+=line
+                    if(j >= 1){
+                        break
                     }
                 }
+                test_vocab.push(_locallist)
             }
         }
-        rawFile.send(null);
-        return res
-    }
 
-    function readTextFile3(file)
-    {
-        vocab = []
+        //console.log(test_vocab)
+        /*
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", file, false);
         rawFile.onreadystatechange = function ()
@@ -408,48 +411,19 @@
                         def = line[1]
 
                         if(index != prevIndex) {
-                            vocab.push([])
+                            test_vocab.push([])
                             prevIndex = index
                         }
 
-                        vocab[vocab.length - 1].push([word, def, pos])
+                        test_vocab[test_vocab.length - 1].push([word, def, pos])
                     }
                 }
             }
+
         }
 
         rawFile.send(null);
-    }
-
-    function readTextFile(file)
-    {
-        dict = {}
-        var rawFile = new XMLHttpRequest();
-        rawFile.open("GET", file, false);
-        rawFile.onreadystatechange = function ()
-        {
-            if(rawFile.readyState === 4)
-            {
-                if(rawFile.status === 200 || rawFile.status == 0)
-                {
-                    var allText = rawFile.responseText;
-
-                    let lines = allText.split(/\r?\n/);
-                    //console.log(lines);
-
-                    for (let i = 0; i < lines.length; i++) {
-                        let line = lines[i].split(";");
-                        if(line[0]=="версиям"){
-                            console.log(line);
-                        }
-                        if (line.length == 3) {
-                            dict[line[0]] = [line[1], line[2]]
-                        }
-                    }
-                }
-            }
-        }
-        rawFile.send(null);
+         */
     }
 
 </script>

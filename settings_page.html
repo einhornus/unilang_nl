@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Settings</title>
+
+    <link rel="icon"
+          type="image/svg"
+          href="images/flags/ru.svg">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="style.css"/>
+
+</head>
+<body>
+
+
+<div>
+    <h1>Shown content</h1>
+
+
+    <table class="searchtable">
+
+
+        <tr>
+
+            <td>
+                <p><b>Meanings table</b></p>
+                <div>
+                    <input type="radio" id="b1_1" name="n1"
+                           checked>
+                    <label for="b1_1">Show</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b2_1" name="n1">
+                    <label for="b2_1">Show partly</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b3_1" name="n1">
+                    <label for="b3_1">Hide</label>
+                </div>
+
+                <br>
+                <br>
+
+            </td>
+
+            <td>
+
+                <p><b>Main section language</b></p>
+                <div>
+                    <input type="radio" id="b1_5" name="n5">
+                    <label for="b1_5">English</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b2_5" name="n5" checked>
+                    <label for="b2_5">English + Russian</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b3_5" name="n5" checked>
+                    <label for="b2_5">Russian</label>
+                </div>
+
+                <br>
+                <br>
+
+            </td>
+
+            <td>
+
+                <p><b>Etymology</b></p>
+                <div>
+                    <input type="radio" id="b1_2" name="n2"
+                           checked>
+                    <label for="b1_2">Show</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b2_2" name="n2">
+                    <label for="b2_2">Show under spoiler</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b3_2" name="n2">
+                    <label for="b3_2">Hide</label>
+                </div>
+
+                <br>
+                <br>
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+            <td>
+
+                <p><b>Usage notes</b></p>
+                <div>
+                    <input type="radio" id="b1_3" name="n3"
+                           checked>
+                    <label for="b1_3">Show</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b2_3" name="n3">
+                    <label for="b2_3">Show under spoiler</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b3_3" name="n3">
+                    <label for="b3_3">Hide</label>
+                </div>
+
+                <br>
+                <br>
+
+            </td>
+
+
+            <td>
+
+                <p><b>Synonyms</b></p>
+                <div>
+                    <input type="radio" id="b1_4" name="n4"
+                           checked>
+                    <label for="b1_4">Show</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b2_4" name="n4">
+                    <label for="b2_4">Show under spoiler</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b3_4" name="n4">
+                    <label for="b3_4">Hide</label>
+                </div>
+
+                <br>
+                <br>
+
+            </td>
+
+            <td>
+
+                <p><b>Related terms</b></p>
+                <div>
+                    <input type="radio" id="b1_6" name="n6"
+                           checked>
+                    <label for="b1_4">Show</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b2_6" name="n6">
+                    <label for="b2_4">Show under spoiler</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b3_6" name="n6">
+                    <label for="b3_4">Hide</label>
+                </div>
+
+                <br>
+                <br>
+
+            </td>
+
+
+            <td>
+                <p><b>Derived terms</b></p>
+                <div>
+                    <input type="radio" id="b1_7" name="n7"
+                           checked>
+                    <label for="b1_7">Show</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b2_7" name="n7">
+                    <label for="b2_7">Show under spoiler</label>
+                </div>
+
+                <div>
+                    <input type="radio" id="b3_7" name="n7">
+                    <label for="b3_7">Hide</label>
+                </div>
+
+                <br>
+                <br>
+
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+
+<br>
+
+<div>
+    <h1>Other settings</h1>
+    <input type="checkbox" id="lockbar" onclick="change()">
+    <label for="lockbar">Hide page scrollbar</label>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<footer>
+    <div align="center">
+        <button type="submit" class="mybutton" onclick="sbmt()">Submit changes</button>
+    </div>
+</footer>
+
+<script>
+    function getCookie_(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function setCookie_(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function determine(id1, id2, id3){
+        var d1 = document.getElementById(id1)
+        var d2 = document.getElementById(id2)
+        var d3 = document.getElementById(id3)
+
+        if(d1.checked){
+            return "0";
+        }
+
+        if(d2.checked){
+            return "1";
+        }
+
+        if(d3.checked){
+            return "2";
+        }
+
+        return "";
+    }
+
+    let lb = document.getElementById("lockbar")
+
+
+    gc = getCookie_("lockbar")
+
+    mt = getCookie_("mt")
+    if(mt == ""){
+        mt = "0";
+    }
+    inf = getCookie_("inf")
+    if(inf == ""){
+        inf = "0";
+    }
+    rt = getCookie_("rt")
+    if(rt == ""){
+        rt = "1";
+    }
+    un = getCookie_("un")
+    if(un == ""){
+        un = "0";
+    }
+    syn = getCookie_("syn")
+    if(syn == ""){
+        syn = "0";
+    }
+    rel = getCookie_("rel")
+    if(rel == ""){
+        rel = "0";
+    }
+    der = getCookie_("der")
+    if(der == ""){
+        der = "0";
+    }
+
+    init("b1_1", "b2_1", "b3_1", mt);
+    init("b1_2", "b2_2", "b3_2", inf);
+    init("b1_5", "b2_5", "b3_5", rt);
+    init("b1_3", "b2_3", "b3_3", un);
+    init("b1_4", "b2_4", "b3_4", syn);
+    init("b1_6", "b2_6", "b3_6", rel);
+    init("b1_7", "b2_7", "b3_7", der);
+
+    if (gc == "true") {
+        lb.checked = true
+    }
+
+
+    function sbmt() {
+        let lb = document.getElementById("lockbar")
+        setCookie_("lockbar", lb.checked, 1000);
+
+        setCookie_("mt", determine("b1_1", "b2_1", "b3_1"), 1000);
+        setCookie_("inf", determine("b1_2", "b2_2", "b3_2"), 1000);
+        setCookie_("rt", determine("b1_5", "b2_5", "b3_5"), 1000);
+        setCookie_("un", determine("b1_3", "b2_3", "b3_3"), 1000);
+        setCookie_("syn", determine("b1_4", "b2_4", "b3_4"), 1000);
+        setCookie_("rel", determine("b1_6", "b2_6", "b3_6"), 1000);
+        setCookie_("der", determine("b1_7", "b2_7", "b3_7"), 1000);
+
+        console.log(document.cookie)
+    }
+
+    function init(id1, id2, id3, vr){
+        var d1 = document.getElementById(id1)
+        var d2 = document.getElementById(id2)
+        var d3 = document.getElementById(id3)
+
+        if(vr == "0"){
+            d1.checked = true
+        }
+
+        if(vr == "1"){
+            d2.checked = true
+        }
+
+        if(vr == "2"){
+            d3.checked = true
+        }
+    }
+
+</script>
+
+</body>
+</html>
